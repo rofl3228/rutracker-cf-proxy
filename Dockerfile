@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends tzdata && rm -r
     && useradd --system --uid 568 --home-dir /data appuser \
     && mkdir -p /data && chown appuser /data
 USER appuser
-VOLUME /data
+# No VOLUME: mount /data explicitly to keep clearance across restarts
+# (a declared VOLUME would create stray anonymous volumes, e.g. for `install-definition`).
 EXPOSE 8080
 HEALTHCHECK --interval=60s --timeout=5s --start-period=20s \
     CMD python -c "import os,urllib.request; urllib.request.urlopen('http://127.0.0.1:%s/health' % os.environ.get('PORT','8080'), timeout=4)"
