@@ -30,7 +30,7 @@ run_as_context:
 screenshots: []
 sources:
 - https://github.com/rofl3228/rutracker-cf-proxy
-- https://hub.docker.com/r/kirfeo/rutracker-cf-proxy
+- https://github.com/rofl3228/rutracker-cf-proxy/pkgs/container/rutracker-cf-proxy
 title: RuTracker CF Proxy
 train: community
 version: 1.0.0

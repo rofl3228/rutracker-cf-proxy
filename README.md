@@ -6,7 +6,7 @@
 Cookie `cf_clearance` берётся у [byparr](https://github.com/ThePhaseless/Byparr), а все запросы прокси делает сам, притворяясь тем же браузером (`curl_cffi`).
 В комплекте Cardigann-определение индексатора для Prowlarr, названия раздач в котором приводятся к формату, понятному Radarr и Sonarr.
 
-Образ: [`kirfeo/rutracker-cf-proxy`](https://hub.docker.com/r/kirfeo/rutracker-cf-proxy) (linux/amd64, linux/arm64).
+Образ (linux/amd64, linux/arm64): [`ghcr.io/rofl3228/rutracker-cf-proxy`](https://github.com/rofl3228/rutracker-cf-proxy/pkgs/container/rutracker-cf-proxy) или [`kirfeo/rutracker-cf-proxy`](https://hub.docker.com/r/kirfeo/rutracker-cf-proxy) — одинаковые теги.
 
 ## Зачем
 
@@ -110,9 +110,9 @@ sudo docker run --rm --network host --env-file .env -v $PWD/scripts:/scripts --e
 ## Сборка образа
 
 GitHub Actions ([.github/workflows/docker.yml](.github/workflows/docker.yml)): тесты на каждый push и pull request, затем сборка для amd64/arm64.
-Публикация в Docker Hub — при push в `main` (тег `latest`) и при тегах `vX.Y.Z` (теги `X.Y.Z` и `X.Y`); у каждой сборки есть тег `sha-<commit>`.
+Публикация в Docker Hub и GHCR — при push в `main` (тег `latest`) и при тегах `vX.Y.Z` (теги `X.Y.Z` и `X.Y`); у каждой сборки есть тег `sha-<commit>`.
 
-Нужные секреты репозитория: `DOCKERHUB_USERNAME` и `DOCKERHUB_TOKEN` (Docker Hub → Account settings → Personal access tokens, права Read & Write).
+Нужные секреты репозитория: `DOCKERHUB_USERNAME` и `DOCKERHUB_TOKEN` (Docker Hub → Account settings → Personal access tokens, права Read & Write). Для GHCR используется встроенный `GITHUB_TOKEN`.
 
 ## Разработка
 

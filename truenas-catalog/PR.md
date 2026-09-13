@@ -22,7 +22,7 @@ It ships a Cardigann indexer definition for Prowlarr with Radarr/Sonarr-friendly
 
 - **Upstream**: https://github.com/rofl3228/rutracker-cf-proxy
 - **Documentation**: https://github.com/rofl3228/rutracker-cf-proxy#readme
-- **Image**: https://hub.docker.com/r/kirfeo/rutracker-cf-proxy (linux/amd64, linux/arm64)
+- **Image**: ghcr.io/rofl3228/rutracker-cf-proxy (linux/amd64, linux/arm64), also on Docker Hub as kirfeo/rutracker-cf-proxy
 - **App Version**: 0.1.0
 
 ## Testing

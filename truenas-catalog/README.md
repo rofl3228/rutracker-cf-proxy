@@ -6,7 +6,7 @@ it is generated in the catalog repository.
 
 ## Submitting
 
-1. Create the release the app points to: git tag `v0.1.0` → CI publishes `kirfeo/rutracker-cf-proxy:0.1.0`,
+1. Create the release the app points to: git tag `v0.1.0` → CI publishes `ghcr.io/rofl3228/rutracker-cf-proxy:0.1.0` (and the same tag on Docker Hub),
    and a GitHub release `v0.1.0` so `changelog_url` lists the shipped version.
 2. Open an issue in truenas/apps proposing the app (their PR template asks for it).
 3. Fork truenas/apps, copy this folder to `ix-dev/community/rutracker-cf-proxy/`.

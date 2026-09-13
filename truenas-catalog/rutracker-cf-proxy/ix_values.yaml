@@ -1,6 +1,6 @@
 images:
   image:
-    repository: kirfeo/rutracker-cf-proxy
+    repository: ghcr.io/rofl3228/rutracker-cf-proxy
     tag: 0.1.0
   container_utils_image:
     repository: ixsystems/container-utils

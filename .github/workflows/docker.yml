@@ -11,7 +11,8 @@ permissions:
   contents: read
 
 env:
-  IMAGE: kirfeo/rutracker-cf-proxy
+  DOCKERHUB_IMAGE: kirfeo/rutracker-cf-proxy
+  GHCR_IMAGE: ghcr.io/${{ github.repository }}
 
 jobs:
   test:
@@ -34,6 +35,9 @@ jobs:
   image:
     needs: test
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write  # push to ghcr.io with GITHUB_TOKEN
     steps:
       - uses: actions/checkout@v5
 
@@ -45,7 +49,9 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.IMAGE }}
+          images: |
+            ${{ env.DOCKERHUB_IMAGE }}
+            ${{ env.GHCR_IMAGE }}
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
             type=semver,pattern={{version}}
@@ -58,6 +64,14 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Log in to GitHub Container Registry
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build (and push outside pull requests)
         uses: docker/build-push-action@v6
