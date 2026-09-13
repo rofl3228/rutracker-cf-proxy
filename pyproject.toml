@@ -1,0 +1,35 @@
+[project]
+name = "rutracker-proxy"
+version = "0.1.0"
+description = "Passthrough proxy that lets Prowlarr reach Cloudflare-protected RuTracker via a byparr-issued cf_clearance"
+requires-python = ">=3.12"
+dependencies = [
+    "aiohttp>=3.12,<4",
+    "curl_cffi>=0.16,<0.17",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=1.0",
+    "pyyaml>=6",
+    "regex>=2024.0",
+]
+
+[project.scripts]
+rutracker-proxy = "rutracker_proxy.__main__:main"
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+filterwarnings = [
+    # Windows-only notice from curl_cffi about the Proactor event loop; irrelevant in the Linux container.
+    "ignore::curl_cffi.utils.CurlCffiWarning",
+]

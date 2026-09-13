@@ -1,0 +1,11 @@
+.env
+.env.*
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+.pytest_cache/
+
+# local-only project notes
+PLAN.md
+TZ_rutracker_prowlarr_proxy.md

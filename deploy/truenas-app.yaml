@@ -1,0 +1,24 @@
+# TrueNAS SCALE Custom App (Apps -> Discover Apps -> Custom App -> Install via YAML), app name: rutracker-proxy
+#
+# Adjust TZ, BYPARR_URL/PORT and the data path to your setup.
+# The data directory must be writable by uid 568 (TrueNAS "apps" user).
+services:
+  rutracker-proxy:
+    image: kirfeo/rutracker-cf-proxy:latest
+    container_name: rutracker-proxy
+    restart: unless-stopped
+    # Host network like Prowlarr/byparr on TrueNAS: byparr is reachable on 127.0.0.1,
+    # Prowlarr reaches the proxy at http://127.0.0.1:30240/.
+    network_mode: host
+    user: "568:568"
+    environment:
+      TZ: Etc/UTC
+      PORT: "30240"
+      BYPARR_URL: http://127.0.0.1:30230/v1
+      UPSTREAM_URL: https://rutracker.org
+      IMPERSONATE: firefox
+      IP_FAMILY: "4"
+      CACHE_TTL: "300"
+      LOG_LEVEL: INFO
+    volumes:
+      - /mnt/Services/rutracker-proxy/data:/data
