@@ -1,6 +1,7 @@
 ---
 # Custom Prowlarr (Cardigann V11) definition: RuTracker through rutracker-proxy.
-# Install: copy to <prowlarr config>/Definitions/Custom/ and restart Prowlarr.
+# Installed into <prowlarr config>/Definitions/Custom/ by `rutracker-proxy install-definition`,
+# which also replaces `links` with PUBLIC_URL. Manual copy works too (then restart Prowlarr).
 # Do NOT assign a FlareSolverr tag: the proxy handles Cloudflare itself.
 id: rutracker-proxy
 name: RuTracker (proxy)

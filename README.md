@@ -32,6 +32,8 @@ Prowlarr обращается к прокси как к обычному сай�
 | `src/rutracker_proxy/passthrough.py` | маршрут прокси: переписывает заголовки, cookie и ссылки, отдаёт ошибки 502/503/504 |
 | `src/rutracker_proxy/cache.py` | кэш поиска на 5 минут и объединение одинаковых одновременных запросов |
 | `src/rutracker_proxy/app.py` | HTTP-сервер, `/health` |
+| `src/rutracker_proxy/definition.py` | команда `install-definition`: кладёт определение в Prowlarr и просит его перечитать |
+| `src/rutracker_proxy/definitions/rutracker-proxy.yml` | Cardigann-определение индексатора |
 | `scripts/smoke_test.py` | сквозная проверка через запущенный прокси: логин, поиск, `.torrent` |
 
 ## Переменные окружения
@@ -83,14 +85,27 @@ sudo docker run --rm --network host --env-file .env -v $PWD/scripts:/scripts --e
 
 ## Подключение к Prowlarr
 
-1. Скопировать `definitions/rutracker-proxy.yml` в `Definitions/Custom/` в конфиге Prowlarr (на TrueNAS: `/mnt/.ix-apps/app_mounts/prowlarr/config/Definitions/Custom/`, владелец `apps`) и перезапустить Prowlarr.
-2. Prowlarr → Indexers → Add Indexer → найти **RuTracker (proxy)**.
-3. Указать логин и пароль rutracker. **Не** назначать тег FlareSolverr.
-4. Test → Save.
+Определение индексатора лежит внутри образа, в Prowlarr его подкладывает одноразовый сервис `prowlarr-definition` из [deploy/truenas-app.yaml](deploy/truenas-app.yaml). При каждом запуске или обновлении приложения он:
+1. записывает `rutracker-proxy.yml` в `Definitions/Custom/` Prowlarr (только если содержимое изменилось; ручные правки файла перезаписываются);
+2. ставит в `links` адрес из `PUBLIC_URL`; прежний адрес по умолчанию попадает в `legacylinks`, и Prowlarr сам переключает на новый уже добавленные индексаторы;
+3. если заданы `PROWLARR_URL` и `PROWLARR_API_KEY`, просит Prowlarr перечитать определения (команда `IndexerDefinitionUpdate`) — перезапуск не нужен. Без ключа изменения применятся после перезапуска Prowlarr;
+4. завершается.
 
-Если прокси доступен Prowlarr не по `http://127.0.0.1:30240/`, поменяйте `links` в начале `rutracker-proxy.yml`.
+Папка `Definitions/Custom` должна существовать и быть доступна на запись uid 568. Вручную то же самое: `docker run --rm -v <папка>:/definitions -e PUBLIC_URL=... kirfeo/rutracker-cf-proxy install-definition`.
 
-Категории генерируются из `definitions/rutracker_forums.tsv`: после правок в `scripts/gen_categories.py` запустить `python scripts/gen_categories.py`.
+Добавление индексатора:
+1. Prowlarr → Indexers → Add Indexer → найти **RuTracker (proxy)**.
+2. Указать логин и пароль rutracker. **Не** назначать тег FlareSolverr.
+3. Test → Save.
+
+Исходник определения — `src/rutracker_proxy/definitions/rutracker-proxy.yml`. Категории генерируются из `definitions/rutracker_forums.tsv`: после правок в `scripts/gen_categories.py` запустить `python scripts/gen_categories.py`.
+
+| Переменная `install-definition` | По умолчанию | Смысл |
+|---|---|---|
+| `DEFINITION_DIR` | `/definitions` | куда класть определение |
+| `PUBLIC_URL` | `http://127.0.0.1:30240/` | адрес прокси, как его видит Prowlarr |
+| `PROWLARR_URL` | — | адрес Prowlarr для перезагрузки определений |
+| `PROWLARR_API_KEY` | — | API-ключ Prowlarr (Settings → General) |
 
 ## Сборка образа
 

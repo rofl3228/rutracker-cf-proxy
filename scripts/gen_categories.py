@@ -1,4 +1,4 @@
-"""Generate caps.categorymappings for definitions/rutracker-proxy.yml.
+"""Generate caps.categorymappings for src/rutracker_proxy/definitions/rutracker-proxy.yml.
 
 Every RuTracker forum (from definitions/rutracker_forums.tsv) gets a Newznab category:
 first by section, then overridden per root forum, then by keywords in the forum name.
@@ -17,7 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TSV = ROOT / "definitions" / "rutracker_forums.tsv"
-YAML = ROOT / "definitions" / "rutracker-proxy.yml"
+YAML = ROOT / "src" / "rutracker_proxy" / "definitions" / "rutracker-proxy.yml"
 BEGIN = "    # BEGIN generated categorymappings (scripts/gen_categories.py)"
 END = "    # END generated categorymappings"
 

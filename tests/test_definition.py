@@ -1,4 +1,4 @@
-"""Checks for definitions/rutracker-proxy.yml.
+"""Checks for src/rutracker_proxy/definitions/rutracker-proxy.yml.
 
 Prowlarr runs the title filters with .NET regex. The `regex` module supports the same
 features used here (variable-length lookbehind, Unicode scripts), so the filters are
@@ -14,7 +14,7 @@ import regex
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFINITION = ROOT / "definitions" / "rutracker-proxy.yml"
+DEFINITION = ROOT / "src" / "rutracker_proxy" / "definitions" / "rutracker-proxy.yml"
 
 
 @pytest.fixture(scope="module")

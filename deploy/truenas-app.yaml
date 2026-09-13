@@ -1,20 +1,19 @@
 # TrueNAS SCALE Custom App (Apps -> Discover Apps -> Custom App -> Install via YAML), app name: rutracker-proxy
 #
-# Adjust TZ, BYPARR_URL/PORT and the data path to your setup.
-# The data directory must be writable by uid 568 (TrueNAS "apps" user).
+# Adjust TZ, addresses and paths to your setup. Directories must be writable by uid 568 (TrueNAS "apps" user).
+# On TrueNAS, truenas.local resolves to 127.0.0.1 for host-network containers.
 services:
   rutracker-proxy:
     image: kirfeo/rutracker-cf-proxy:latest
     container_name: rutracker-proxy
     restart: unless-stopped
-    # Host network like Prowlarr/byparr on TrueNAS: byparr is reachable on 127.0.0.1,
-    # Prowlarr reaches the proxy at http://127.0.0.1:30240/.
+    # Host network like Prowlarr/byparr on TrueNAS.
     network_mode: host
     user: "568:568"
     environment:
       TZ: Etc/UTC
       PORT: "30240"
-      BYPARR_URL: http://127.0.0.1:30230/v1
+      BYPARR_URL: http://truenas.local:30230/v1
       UPSTREAM_URL: https://rutracker.org
       IMPERSONATE: firefox
       IP_FAMILY: "4"
@@ -22,3 +21,21 @@ services:
       LOG_LEVEL: INFO
     volumes:
       - /mnt/Services/rutracker-proxy/data:/data
+
+  # One-shot: puts the bundled Prowlarr definition into Definitions/Custom on every app start/update, then exits.
+  prowlarr-definition:
+    image: kirfeo/rutracker-cf-proxy:latest
+    container_name: rutracker-proxy-definition
+    command: ["install-definition"]
+    restart: "no"
+    network_mode: host
+    user: "568:568"
+    environment:
+      TZ: Etc/UTC
+      # Address Prowlarr uses to reach the proxy (written into the definition's `links`).
+      PUBLIC_URL: http://truenas.local:30240/
+      # Optional: with both set, Prowlarr reloads the definition without a restart.
+      PROWLARR_URL: http://truenas.local:30050
+      PROWLARR_API_KEY: ""  # Prowlarr -> Settings -> General -> API Key
+    volumes:
+      - /mnt/.ix-apps/app_mounts/prowlarr/config/Definitions/Custom:/definitions
