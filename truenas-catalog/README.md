@@ -24,6 +24,9 @@ it is generated in the catalog repository.
    `generate_metadata.py` bumps `version` when it changes metadata; keep `1.0.0` for the first submission.
 6. Open the PR using [PR.md](PR.md) as the description; the icon is `assets/icon.svg` (PNG render: `assets/icon.png`).
 
+Submitted: issue [truenas/apps#5794](https://github.com/truenas/apps/issues/5794), PR [truenas/apps#5795](https://github.com/truenas/apps/pull/5795).
+`lib_version_hash` must equal the value for the library version in the catalog's `library/hashes.yaml`.
+
 Both test files passed with library 2.3.11 on 2026-09-14 (rendered, deployed, healthy; the definition helper
 wrote the file and exited 0). The default port 30490 was free in the catalog at that time.
 
