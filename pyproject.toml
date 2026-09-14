@@ -1,6 +1,6 @@
 [project]
 name = "rutracker-proxy"
-version = "0.1.0"
+version = "0.1.1"
 description = "Passthrough proxy that lets Prowlarr reach Cloudflare-protected RuTracker via a byparr-issued cf_clearance"
 requires-python = ">=3.12"
 dependencies = [
