@@ -2,121 +2,123 @@
 
 # rutracker-cf-proxy
 
+**English** | [Русский](README_RU.md)
+
 [![Test & publish image](https://github.com/rofl3228/rutracker-cf-proxy/actions/workflows/docker.yml/badge.svg)](https://github.com/rofl3228/rutracker-cf-proxy/actions/workflows/docker.yml)
 
-Прокси между Prowlarr и rutracker.org, который проходит защиту Cloudflare.
-Cookie `cf_clearance` берётся у [byparr](https://github.com/ThePhaseless/Byparr), а все запросы прокси делает сам, притворяясь тем же браузером (`curl_cffi`).
-В комплекте Cardigann-определение индексатора для Prowlarr, названия раздач в котором приводятся к формату, понятному Radarr и Sonarr.
+A proxy between Prowlarr and rutracker.org that gets past Cloudflare protection.
+The `cf_clearance` cookie comes from [byparr](https://github.com/ThePhaseless/Byparr); every request is sent by the proxy itself, impersonating the same browser (`curl_cffi`).
+It ships a Cardigann indexer definition for Prowlarr that rewrites release titles into a format Radarr and Sonarr understand.
 
-Образ (linux/amd64, linux/arm64): [`ghcr.io/rofl3228/rutracker-cf-proxy`](https://github.com/rofl3228/rutracker-cf-proxy/pkgs/container/rutracker-cf-proxy) или [`kirfeo/rutracker-cf-proxy`](https://hub.docker.com/r/kirfeo/rutracker-cf-proxy) — одинаковые теги.
+Image (linux/amd64, linux/arm64): [`ghcr.io/rofl3228/rutracker-cf-proxy`](https://github.com/rofl3228/rutracker-cf-proxy/pkgs/container/rutracker-cf-proxy) or [`kirfeo/rutracker-cf-proxy`](https://hub.docker.com/r/kirfeo/rutracker-cf-proxy), with the same tags.
 
-## Зачем
+## Why
 
-Встроенная связка Prowlarr + FlareSolverr/byparr решает challenge в браузере, но потом повторяет запрос своим .NET-клиентом с полученной cookie.
-Cloudflare такой повтор не принимает: `cf_clearance` привязан к User-Agent, TLS-отпечатку браузера и IP-адресу. Вдобавок byparr не умеет POST, поэтому логин на RuTracker через него невозможен.
+Prowlarr's built-in FlareSolverr/byparr integration solves the challenge in a browser, then repeats the request with its own .NET client and the cookie it got.
+Cloudflare rejects that replay: `cf_clearance` is bound to the User-Agent, the browser's TLS fingerprint and the IP address. On top of that, byparr cannot send POST requests, so logging in to RuTracker through it is impossible.
 
-Этот прокси берёт у byparr только cookie и User-Agent, а сами запросы (логин, поиск, скачивание `.torrent`) отправляет через `curl_cffi` с отпечатком того же браузера и с того же IPv4.
+This proxy takes only the cookie and the User-Agent from byparr, and sends the actual requests (login, search, `.torrent` download) through `curl_cffi` with the same browser fingerprint, from the same IPv4 address.
 
-Кэшируются только результаты поиска (`tracker.php`) с хотя бы одной раздачей, отдельно для каждой сессии rutracker. Логин, проверка входа и скачивание `.torrent` всегда идут на сайт. В ответе есть заголовок `X-Cache: HIT/MISS/SHARED`, статистика — в `/health`.
+Only search results (`tracker.php`) with at least one release are cached, separately for each RuTracker session. Login, the login check and `.torrent` downloads always go to the site. Responses carry an `X-Cache: HIT/MISS/SHARED` header; statistics are in `/health`.
 
-Prowlarr обращается к прокси как к обычному сайту: `http://127.0.0.1:30240/forum/tracker.php?...` уходит на `https://rutracker.org/forum/tracker.php?...`.
-Прокси переписывает `Location` и `Set-Cookie` так, чтобы сессия rutracker жила у Prowlarr, а cookie Cloudflare остаётся внутри прокси.
+Prowlarr talks to the proxy like a regular site: `http://127.0.0.1:30240/forum/tracker.php?...` is forwarded to `https://rutracker.org/forum/tracker.php?...`.
+The proxy rewrites `Location` and `Set-Cookie` so the RuTracker session lives in Prowlarr, while the Cloudflare cookie stays inside the proxy.
 
-## Как устроено
+## How it works
 
-| Файл | Что делает |
+| File | Purpose |
 |---|---|
-| `src/rutracker_proxy/config.py` | настройки из переменных окружения |
-| `src/rutracker_proxy/challenge.py` | узнаёт страницу Cloudflare «Just a moment...» |
-| `src/rutracker_proxy/byparr.py` | просит byparr решить challenge, забирает `cf_clearance` и User-Agent |
-| `src/rutracker_proxy/clearance.py` | хранит clearance, обновляет его один раз на всех, сохраняет в `/data` |
-| `src/rutracker_proxy/upstream.py` | запрос к rutracker; при challenge обновляет clearance и повторяет один раз |
-| `src/rutracker_proxy/passthrough.py` | маршрут прокси: переписывает заголовки, cookie и ссылки, отдаёт ошибки 502/503/504 |
-| `src/rutracker_proxy/cache.py` | кэш поиска на 5 минут и объединение одинаковых одновременных запросов |
-| `src/rutracker_proxy/app.py` | HTTP-сервер, `/health` |
-| `src/rutracker_proxy/definition.py` | команда `install-definition`: кладёт определение в Prowlarr и просит его перечитать |
-| `src/rutracker_proxy/definitions/rutracker-proxy.yml` | Cardigann-определение индексатора |
-| `scripts/smoke_test.py` | сквозная проверка через запущенный прокси: логин, поиск, `.torrent` |
+| `src/rutracker_proxy/config.py` | settings from environment variables |
+| `src/rutracker_proxy/challenge.py` | detects the Cloudflare "Just a moment..." page |
+| `src/rutracker_proxy/byparr.py` | asks byparr to solve the challenge, takes `cf_clearance` and the User-Agent |
+| `src/rutracker_proxy/clearance.py` | keeps the clearance, refreshes it once for all waiting requests, persists it to `/data` |
+| `src/rutracker_proxy/upstream.py` | request to RuTracker; on a challenge refreshes the clearance and retries once |
+| `src/rutracker_proxy/passthrough.py` | proxy route: rewrites headers, cookies and links, returns 502/503/504 errors |
+| `src/rutracker_proxy/cache.py` | 5-minute search cache and de-duplication of identical concurrent requests |
+| `src/rutracker_proxy/app.py` | HTTP server, `/health` |
+| `src/rutracker_proxy/definition.py` | `install-definition` command: puts the definition into Prowlarr and asks it to reload |
+| `src/rutracker_proxy/definitions/rutracker-proxy.yml` | Cardigann indexer definition |
+| `scripts/smoke_test.py` | end-to-end check through a running proxy: login, search, `.torrent` |
 
-## Переменные окружения
+## Environment variables
 
-| Переменная | По умолчанию | Смысл |
+| Variable | Default | Meaning |
 |---|---|---|
-| `PORT` | `8080` | порт прокси (в приложении TrueNAS — `30240`) |
-| `BYPARR_URL` | `http://127.0.0.1:30230/v1` | адрес byparr |
-| `UPSTREAM_URL` | `https://rutracker.org` | зеркало rutracker |
-| `CLEARANCE_URL` | `https://rutracker.org/forum/login.php` | страница, которую открывает byparr |
-| `IMPERSONATE` | `firefox` | каким браузером притворяться; должен совпадать с браузером byparr |
-| `IP_FAMILY` | `4` | `4` / `6` / `any`; cookie привязана к IP, byparr ходит по IPv4 |
-| `UPSTREAM_TIMEOUT` | `90` | таймаут запроса к rutracker, с |
-| `ORIGIN_RETRIES` | `1` | повторы GET при ошибках Cloudflare 520–524 (сервер rutracker не ответил); POST не повторяется |
-| `UPSTREAM_CONCURRENCY` | `2` | сколько запросов к rutracker одновременно |
-| `CACHE_TTL` | `300` | сколько секунд хранить результаты поиска (`0` — выключить кэш) |
-| `CACHE_MAX_ENTRIES` | `100` | сколько результатов поиска держать в памяти |
-| `BYPARR_TIMEOUT` | `120` | сколько byparr может решать challenge, с |
-| `CLEARANCE_MAX_AGE` | `0` | обновлять clearance заранее, когда старше N секунд (`0` — только по факту challenge) |
-| `CLEARANCE_FILE` | `/data/clearance.json` в Docker | где хранить clearance между перезапусками |
-| `LOG_LEVEL` | `INFO` | `DEBUG` покажет каждый запрос |
+| `PORT` | `8080` | proxy port (`30240` in the TrueNAS app) |
+| `BYPARR_URL` | `http://127.0.0.1:30230/v1` | byparr address |
+| `UPSTREAM_URL` | `https://rutracker.org` | RuTracker mirror |
+| `CLEARANCE_URL` | `https://rutracker.org/forum/login.php` | page byparr opens |
+| `IMPERSONATE` | `firefox` | browser to impersonate; must match byparr's browser |
+| `IP_FAMILY` | `4` | `4` / `6` / `any`; the cookie is bound to the IP, byparr uses IPv4 |
+| `UPSTREAM_TIMEOUT` | `90` | RuTracker request timeout, seconds |
+| `ORIGIN_RETRIES` | `1` | GET retries on Cloudflare 520–524 errors (RuTracker server did not respond); POST is never retried |
+| `UPSTREAM_CONCURRENCY` | `2` | concurrent requests to RuTracker |
+| `CACHE_TTL` | `300` | how long to keep search results, seconds (`0` disables the cache) |
+| `CACHE_MAX_ENTRIES` | `100` | how many search results to keep in memory |
+| `BYPARR_TIMEOUT` | `120` | how long byparr may take to solve the challenge, seconds |
+| `CLEARANCE_MAX_AGE` | `0` | refresh the clearance ahead of time once it is older than N seconds (`0` means only on a challenge) |
+| `CLEARANCE_FILE` | `/data/clearance.json` in Docker | where the clearance is kept across restarts |
+| `LOG_LEVEL` | `INFO` | `DEBUG` logs every request |
 
-## Запуск на TrueNAS
+## Running on TrueNAS
 
-Apps → Discover Apps → Custom App → Install via YAML, вставить [deploy/truenas-app.yaml](deploy/truenas-app.yaml) (поправить `TZ`, адрес byparr и путь к данным; каталог данных должен быть доступен на запись uid 568).
-Прокси и byparr должны выходить в интернет с одного внешнего IP — на одном хосте это так и есть.
+Apps → Discover Apps → Custom App → Install via YAML, paste [deploy/truenas-app.yaml](deploy/truenas-app.yaml) (adjust `TZ`, the byparr address and the data path; the data directory must be writable by uid 568).
+The proxy and byparr must reach the internet from the same public IP, which is the case when they run on the same host.
 
-Проверка:
+Check:
 
 ```bash
 curl http://127.0.0.1:30240/health
 ```
 
-Обновление: Apps → rutracker-proxy → Update / Redeploy (подтянет свежий `latest`).
+Update: Apps → rutracker-proxy → Update / Redeploy (pulls the latest `latest`).
 
-Диагностика — один раз пройти Cloudflare и выйти:
+Diagnostics: pass Cloudflare once and exit:
 
 ```bash
 sudo docker run --rm --network host kirfeo/rutracker-cf-proxy check /forum/tracker.php?nm=test
 ```
 
-`OK: ... -> 302 ... location=.../login.php` означает, что Cloudflare пройден (302 на логин — нормальный ответ гостю).
+`OK: ... -> 302 ... location=.../login.php` means Cloudflare was passed (a 302 to the login page is the normal answer for a guest).
 
-Сквозная проверка через запущенный прокси (логин и пароль из `.env`, одна попытка входа):
+End-to-end check through a running proxy (login and password from `.env`, a single login attempt):
 
 ```bash
 sudo docker run --rm --network host --env-file .env -v $PWD/scripts:/scripts --entrypoint python kirfeo/rutracker-cf-proxy /scripts/smoke_test.py http://127.0.0.1:30240
 ```
 
-## Подключение к Prowlarr
+## Connecting to Prowlarr
 
-Определение индексатора лежит внутри образа, в Prowlarr его подкладывает одноразовый сервис `prowlarr-definition` из [deploy/truenas-app.yaml](deploy/truenas-app.yaml). При каждом запуске или обновлении приложения он:
-1. записывает `rutracker-proxy.yml` в `Definitions/Custom/` Prowlarr (только если содержимое изменилось; ручные правки файла перезаписываются);
-2. ставит в `links` адрес из `PUBLIC_URL`; прежний адрес по умолчанию попадает в `legacylinks`, и Prowlarr сам переключает на новый уже добавленные индексаторы;
-3. если заданы `PROWLARR_URL` и `PROWLARR_API_KEY`, просит Prowlarr перечитать определения (команда `IndexerDefinitionUpdate`) — перезапуск не нужен. Без ключа изменения применятся после перезапуска Prowlarr;
-4. завершается.
+The indexer definition is bundled in the image; the one-shot `prowlarr-definition` service from [deploy/truenas-app.yaml](deploy/truenas-app.yaml) puts it into Prowlarr. On every start or update of the app it:
+1. writes `rutracker-proxy.yml` into Prowlarr's `Definitions/Custom/` (only if the content changed; manual edits to the file are overwritten);
+2. sets `links` to the `PUBLIC_URL` address; the previous default address goes to `legacylinks`, so Prowlarr switches existing indexers to the new one by itself;
+3. if `PROWLARR_URL` and `PROWLARR_API_KEY` are set, asks Prowlarr to reload definitions (the `IndexerDefinitionUpdate` command), so no restart is needed. Without the key, changes apply after Prowlarr restarts;
+4. exits.
 
-Папка `Definitions/Custom` должна существовать и быть доступна на запись uid 568. Вручную то же самое: `docker run --rm -v <папка>:/definitions -e PUBLIC_URL=... kirfeo/rutracker-cf-proxy install-definition`.
+The `Definitions/Custom` folder must exist and be writable by uid 568. The same thing by hand: `docker run --rm -v <folder>:/definitions -e PUBLIC_URL=... kirfeo/rutracker-cf-proxy install-definition`.
 
-Добавление индексатора:
-1. Prowlarr → Indexers → Add Indexer → найти **RuTracker (proxy)**.
-2. Указать логин и пароль rutracker. **Не** назначать тег FlareSolverr.
+Adding the indexer:
+1. Prowlarr → Indexers → Add Indexer → find **RuTracker (proxy)**.
+2. Enter your RuTracker login and password. Do **not** assign a FlareSolverr tag.
 3. Test → Save.
 
-Исходник определения — `src/rutracker_proxy/definitions/rutracker-proxy.yml`. Категории генерируются из `definitions/rutracker_forums.tsv`: после правок в `scripts/gen_categories.py` запустить `python scripts/gen_categories.py`.
+The definition source is `src/rutracker_proxy/definitions/rutracker-proxy.yml`. Categories are generated from `definitions/rutracker_forums.tsv`: after changing `scripts/gen_categories.py`, run `python scripts/gen_categories.py`.
 
-| Переменная `install-definition` | По умолчанию | Смысл |
+| `install-definition` variable | Default | Meaning |
 |---|---|---|
-| `DEFINITION_DIR` | `/definitions` | куда класть определение |
-| `PUBLIC_URL` | `http://127.0.0.1:30240/` | адрес прокси, как его видит Prowlarr |
-| `PROWLARR_URL` | — | адрес Prowlarr для перезагрузки определений |
-| `PROWLARR_API_KEY` | — | API-ключ Prowlarr (Settings → General) |
+| `DEFINITION_DIR` | `/definitions` | where to put the definition |
+| `PUBLIC_URL` | `http://127.0.0.1:30240/` | proxy address as seen by Prowlarr |
+| `PROWLARR_URL` | — | Prowlarr address for reloading definitions |
+| `PROWLARR_API_KEY` | — | Prowlarr API key (Settings → General) |
 
-## Сборка образа
+## Building the image
 
-GitHub Actions ([.github/workflows/docker.yml](.github/workflows/docker.yml)): тесты на каждый push и pull request, затем сборка для amd64/arm64.
-Публикация в Docker Hub и GHCR — при push в `main` (тег `latest`) и при тегах `vX.Y.Z` (теги `X.Y.Z` и `X.Y`); у каждой сборки есть тег `sha-<commit>`.
+GitHub Actions ([.github/workflows/docker.yml](.github/workflows/docker.yml)): tests on every push and pull request, then a build for amd64/arm64.
+Images are published to Docker Hub and GHCR on pushes to `main` (tag `latest`) and on `vX.Y.Z` tags (tags `X.Y.Z` and `X.Y`); every build also gets a `sha-<commit>` tag.
 
-Нужные секреты репозитория: `DOCKERHUB_USERNAME` и `DOCKERHUB_TOKEN` (Docker Hub → Account settings → Personal access tokens, права Read & Write). Для GHCR используется встроенный `GITHUB_TOKEN`.
+Required repository secrets: `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` (Docker Hub → Account settings → Personal access tokens, Read & Write). GHCR uses the built-in `GITHUB_TOKEN`.
 
-## Разработка
+## Development
 
 ```bash
 python -m venv .venv
