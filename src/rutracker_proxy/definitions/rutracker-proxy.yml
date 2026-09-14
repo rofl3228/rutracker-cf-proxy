@@ -17,12 +17,24 @@ links:
 caps:
   categorymappings:
     # BEGIN generated categorymappings (scripts/gen_categories.py)
+    - {id: 756, cat: Movies, desc: "Предложения по улучшению категории 'Кино, Видео и ТВ'"}
+    - {id: 214, cat: Movies, desc: "Кино, Видео и TV - помощь по разделу"}
+    - {id: 692, cat: Movies, desc: "Заявки, заказы, координация"}
+    - {id: 1253, cat: Movies, desc: "Архив (Кино, Видео и TV - помощь по разделу)"}
+    - {id: 23, cat: Movies, desc: "Обработка видео + аудио"}
+    - {id: 707, cat: Movies/DVD, desc: "Работа с DVD"}
+    - {id: 1194, cat: Movies/HD, desc: "Работа с BLU RAY и HD-DVD"}
     - {id: 22, cat: Movies, desc: "Наше кино"}
     - {id: 941, cat: Movies, desc: "Кино СССР"}
     - {id: 1666, cat: Movies, desc: "Детские отечественные фильмы"}
     - {id: 376, cat: Movies, desc: "Авторские дебюты"}
     - {id: 106, cat: Movies, desc: "Фильмы России и СССР на национальных языках [без перевода]"}
+    - {id: 772, cat: Movies, desc: "Российские/советские режиссёры и их творчество"}
+    - {id: 789, cat: Movies, desc: "Российские/советские актёры и фильмы с их участием"}
+    - {id: 65, cat: Movies, desc: "Ищу (Наше кино) + Тематические ссылки"}
+    - {id: 267, cat: Movies, desc: "Архив (Наше кино)"}
     - {id: 7, cat: Movies/Foreign, desc: "Зарубежное кино"}
+    - {id: 1640, cat: Movies/Foreign, desc: "Тематические подборки ссылок"}
     - {id: 187, cat: Movies/Foreign, desc: "Классика мирового кинематографа"}
     - {id: 2090, cat: Movies/Foreign, desc: "Фильмы до 1990 года"}
     - {id: 2221, cat: Movies/Foreign, desc: "Фильмы 1991-2000"}
@@ -40,13 +52,30 @@ caps:
     - {id: 1235, cat: Movies/Foreign, desc: "Грайндхаус"}
     - {id: 166, cat: Movies/Foreign, desc: "Зарубежные фильмы без перевода"}
     - {id: 185, cat: Movies/Foreign, desc: "Звуковые дорожки и Переводы"}
+    - {id: 1454, cat: Movies/Foreign, desc: "Авторский перевод"}
+    - {id: 2374, cat: Movies/Foreign, desc: "Закадровый перевод"}
+    - {id: 1692, cat: Movies/Foreign, desc: "Подраздел переводчиков"}
+    - {id: 2373, cat: Movies/Foreign, desc: "Профессиональные студии закадрового перевода и дубляжа"}
+    - {id: 254, cat: Movies/Foreign, desc: "Зарубежные актёры и фильмы с их участием"}
+    - {id: 771, cat: Movies/Foreign, desc: "Зарубежные режиссёры и их творчество"}
+    - {id: 44, cat: Movies/Foreign, desc: "Поиск и обсуждение фильмов"}
+    - {id: 906, cat: Movies/Foreign, desc: "Ищу / Предлагаю звуковые дорожки и переводы"}
+    - {id: 69, cat: Movies/Foreign, desc: "Архив (Зарубежное кино)"}
     - {id: 124, cat: Movies/Other, desc: "Арт-хаус и авторское кино"}
     - {id: 1543, cat: Movies/Other, desc: "Короткий метр (Арт-хаус и авторское кино)"}
     - {id: 709, cat: Movies/Other, desc: "Документальные фильмы (Арт-хаус и авторское кино)"}
     - {id: 1577, cat: Movies/Other, desc: "Анимация (Арт-хаус и авторское кино)"}
+    - {id: 149, cat: Movies/Other, desc: "Фильмографии (Авторское кино)"}
+    - {id: 125, cat: Movies/Other, desc: "Ищу / Предлагаю (Авторское кино)"}
+    - {id: 186, cat: Movies/Other, desc: "Поговорим об арт-хаусе"}
+    - {id: 531, cat: Movies/Other, desc: "Архив (Авторское кино)"}
     - {id: 511, cat: Movies/Other, desc: "Театр"}
     - {id: 1493, cat: Movies/Other, desc: "Спектакли без перевода"}
+    - {id: 540, cat: Movies/Other, desc: "Архив (Театр)"}
+    - {id: 513, cat: Movies/Other, desc: "Ищу / Предлагаю (Театр)"}
     - {id: 93, cat: Movies/DVD, desc: "DVD Video"}
+    - {id: 96, cat: Movies/DVD, desc: "Архив (DVD, HD Video)"}
+    - {id: 94, cat: Movies/DVD, desc: "Ищу / Предлагаю (DVD, HD Video)"}
     - {id: 905, cat: Movies/DVD, desc: "Классика мирового кинематографа (DVD Video)"}
     - {id: 101, cat: Movies/DVD, desc: "Зарубежное кино (DVD Video)"}
     - {id: 100, cat: Movies/DVD, desc: "Наше кино (DVD Video)"}
@@ -64,6 +93,7 @@ caps:
     - {id: 2339, cat: Movies/HD, desc: "Арт-хаус и авторское кино (HD Video)"}
     - {id: 140, cat: Movies/HD, desc: "Индийское кино (HD Video)"}
     - {id: 194, cat: Movies/HD, desc: "Грайндхаус (HD Video)"}
+    - {id: 653, cat: Movies/HD, desc: "Анонсы (U)HD Video"}
     - {id: 718, cat: Movies/UHD, desc: "UHD Video"}
     - {id: 775, cat: Movies/UHD, desc: "Классика мирового кинематографа (UHD Video)"}
     - {id: 1457, cat: Movies/UHD, desc: "Зарубежное кино (UHD Video)"}
@@ -71,6 +101,7 @@ caps:
     - {id: 272, cat: Movies/UHD, desc: "Азиатские фильмы (UHD Video)"}
     - {id: 271, cat: Movies/UHD, desc: "Арт-хаус и авторское кино (UHD Video)"}
     - {id: 352, cat: Movies/3D, desc: "3D/Стерео Кино, Видео, TV и Спорт"}
+    - {id: 2344, cat: Movies/3D, desc: "Архив (3D)"}
     - {id: 549, cat: Movies/3D, desc: "3D Кинофильмы"}
     - {id: 1213, cat: Movies/3D, desc: "3D Мультфильмы"}
     - {id: 2109, cat: Movies/3D, desc: "3D Документальные фильмы"}
@@ -91,12 +122,18 @@ caps:
     - {id: 484, cat: Movies, desc: "Иностранные короткометражные мультфильмы"}
     - {id: 822, cat: Movies, desc: "Сборники мультфильмов"}
     - {id: 181, cat: Movies, desc: "Мультфильмы без перевода"}
+    - {id: 86, cat: Movies, desc: "Ищу (Мультфильмы)"}
+    - {id: 665, cat: Movies, desc: "Архив (Мультфильмы)"}
     - {id: 921, cat: TV, desc: "Мультсериалы"}
     - {id: 815, cat: TV, desc: "Мультсериалы (SD Video)"}
     - {id: 816, cat: TV, desc: "Мультсериалы (DVD Video)"}
     - {id: 1460, cat: TV/HD, desc: "Мультсериалы (HD Video)"}
     - {id: 498, cat: TV/UHD, desc: "Мультсериалы (UHD Video)"}
+    - {id: 932, cat: TV, desc: "Ищу (Мультсериалы)"}
+    - {id: 931, cat: TV, desc: "Архив (Мультсериалы)"}
     - {id: 33, cat: TV/Anime, desc: "Аниме"}
+    - {id: 1385, cat: TV/Anime, desc: "Предложения по улучшению раздела 'Аниме'"}
+    - {id: 705, cat: TV/Anime, desc: "Поговорим об аниме"}
     - {id: 1106, cat: TV/Anime, desc: "Онгоинги (HD Video)"}
     - {id: 1105, cat: TV/Anime, desc: "Аниме (HD Video)"}
     - {id: 599, cat: TV/Anime, desc: "Аниме (DVD Video)"}
@@ -112,7 +149,11 @@ caps:
     - {id: 2484, cat: TV/Anime, desc: "Артбуки и журналы (Аниме)"}
     - {id: 1386, cat: TV/Anime, desc: "Обои, сканы, аватары, арт"}
     - {id: 1387, cat: TV/Anime, desc: "AMV и другие ролики"}
+    - {id: 535, cat: TV/Anime, desc: "Архив (Аниме)"}
+    - {id: 917, cat: TV, desc: "Предложения по улучшению категории 'Сериалы'"}
     - {id: 9, cat: TV, desc: "Русские сериалы"}
+    - {id: 26, cat: TV, desc: "Ищу (Русские сериалы)"}
+    - {id: 32, cat: TV, desc: "Обсуждение (Русские сериалы)"}
     - {id: 812, cat: TV/UHD, desc: "Русские сериалы (UHD Video)"}
     - {id: 81, cat: TV/HD, desc: "Русские сериалы (HD Video)"}
     - {id: 920, cat: TV, desc: "Русские сериалы (DVD Video)"}
@@ -125,7 +166,10 @@ caps:
     - {id: 175, cat: TV, desc: "След"}
     - {id: 79, cat: TV, desc: "Некрасивая подружка"}
     - {id: 104, cat: TV, desc: "Психология преступления"}
+    - {id: 67, cat: TV, desc: "Архив (Русские сериалы)"}
     - {id: 189, cat: TV/Foreign, desc: "Зарубежные сериалы"}
+    - {id: 1147, cat: TV/Foreign, desc: "Обсуждение сериалов"}
+    - {id: 191, cat: TV/Foreign, desc: "Ищу (Зарубежные сериалы)"}
     - {id: 842, cat: TV/Foreign, desc: "Новинки и сериалы в стадии показа"}
     - {id: 235, cat: TV/Foreign, desc: "Сериалы США и Канады"}
     - {id: 242, cat: TV/Foreign, desc: "Сериалы Великобритании и Ирландии"}
@@ -149,6 +193,7 @@ caps:
     - {id: 536, cat: TV/Foreign, desc: "Форс-мажоры / Костюмы в законе / Suits"}
     - {id: 1144, cat: TV/Foreign, desc: "Ходячие мертвецы + Бойтесь ходячих мертвецов"}
     - {id: 195, cat: TV/Foreign, desc: "Для некондиционных раздач"}
+    - {id: 190, cat: TV/Foreign, desc: "Архив (Зарубежные сериалы)"}
     - {id: 2366, cat: TV/HD, desc: "Зарубежные сериалы (HD Video)"}
     - {id: 1803, cat: TV/HD, desc: "Новинки и сериалы в стадии показа (HD Video)"}
     - {id: 266, cat: TV/HD, desc: "Сериалы США и Канады (HD Video)"}
@@ -166,6 +211,7 @@ caps:
     - {id: 2396, cat: TV/HD, desc: "Теория Большого Взрыва / The Big Bang Theory (HD Video)"}
     - {id: 2398, cat: TV/HD, desc: "Ходячие мертвецы + Бойтесь ходячих мертвецов (HD Video)"}
     - {id: 1498, cat: TV/HD, desc: "Для некондиционных раздач (HD Video)"}
+    - {id: 2369, cat: TV/HD, desc: "Архив Зарубежные сериалы (HD Video)"}
     - {id: 119, cat: TV/UHD, desc: "Зарубежные сериалы (UHD Video)"}
     - {id: 1171, cat: TV/UHD, desc: "Новинки и сериалы в стадии показа (UHD Video)"}
     - {id: 1669, cat: TV/UHD, desc: "Сериалы США и Канады (UHD Video)"}
@@ -174,7 +220,9 @@ caps:
     - {id: 1949, cat: TV/UHD, desc: "Сериалы Австралии и Новой Зеландии (UHD Video)"}
     - {id: 173, cat: TV/UHD, desc: "Сериалы совместного производства нескольких стран (UHD Video)"}
     - {id: 273, cat: TV/UHD, desc: "Для некондиционных раздач (UHD Video)"}
+    - {id: 2406, cat: TV/UHD, desc: "Архив Зарубежные сериалы (UHD Video)"}
     - {id: 911, cat: TV/Foreign, desc: "Сериалы Латинской Америки, Турции и Индии"}
+    - {id: 914, cat: TV/Foreign, desc: "Ищу / Предлагаю"}
     - {id: 325, cat: TV/Foreign, desc: "Сериалы Аргентины"}
     - {id: 534, cat: TV/Foreign, desc: "Сериалы Бразилии"}
     - {id: 594, cat: TV/Foreign, desc: "Сериалы Венесуэлы"}
@@ -186,6 +234,7 @@ caps:
     - {id: 781, cat: TV/Foreign, desc: "Сериалы совместного производства"}
     - {id: 704, cat: TV/Foreign, desc: "Сериалы Турции"}
     - {id: 1537, cat: TV/Foreign, desc: "Для некондиционных раздач"}
+    - {id: 913, cat: TV/Foreign, desc: "Архив (Сериалы Латинской Америки, Турции и Индии)"}
     - {id: 2100, cat: TV/Foreign, desc: "Азиатские сериалы"}
     - {id: 820, cat: TV/UHD, desc: "Азиатские сериалы (UHD Video)"}
     - {id: 915, cat: TV/Foreign, desc: "Корейские сериалы"}
@@ -194,6 +243,8 @@ caps:
     - {id: 1939, cat: TV/Foreign, desc: "Японские сериалы"}
     - {id: 2412, cat: TV/Foreign, desc: "Сериалы Таиланда, Индонезии, Сингапура"}
     - {id: 2102, cat: TV/Foreign, desc: "VMV и др. ролики"}
+    - {id: 2101, cat: TV/Foreign, desc: "Архив (Азиатские сериалы)"}
+    - {id: 1629, cat: TV/Documentary, desc: "Предложения по улучшению категории 'Документалистика и юмор'"}
     - {id: 19, cat: TV/Other, desc: "СМИ"}
     - {id: 670, cat: TV/Other, desc: "Вера и религия"}
     - {id: 1475, cat: TV/Other, desc: "[Видео Религия] Христианство"}
@@ -201,6 +252,9 @@ caps:
     - {id: 1453, cat: TV/Other, desc: "[Видео Религия] Культы и новые религиозные движения"}
     - {id: 294, cat: TV/Other, desc: "[Видео Религия] Религии Индии, Тибета и Восточной Азии"}
     - {id: 46, cat: TV/Documentary, desc: "Документальные фильмы и телепередачи"}
+    - {id: 2172, cat: TV/Documentary, desc: "-= Правила, инструкции, FAQ'и =-"}
+    - {id: 73, cat: TV/Documentary, desc: "Архив (Документальные фильмы)"}
+    - {id: 77, cat: TV/Documentary, desc: "Ищу / Предлагаю / Анонсы ТВ"}
     - {id: 103, cat: TV/Documentary, desc: "Документальные (DVD)"}
     - {id: 671, cat: TV/Documentary, desc: "[Док] Биографии. Личности и кумиры"}
     - {id: 2177, cat: TV/Documentary, desc: "[Док] Кинематограф и мультипликация"}
@@ -219,6 +273,7 @@ caps:
     - {id: 876, cat: TV/Documentary, desc: "[Док] Путешествия и туризм"}
     - {id: 2139, cat: TV/Documentary, desc: "[Док] Медицина"}
     - {id: 2380, cat: TV/Documentary, desc: "[Док] Социальные ток-шоу"}
+    - {id: 1467, cat: TV/Documentary, desc: "[Док] Информационно-аналитические и общественно-политические передачи"}
     - {id: 1469, cat: TV/Documentary, desc: "[Док] Архитектура и строительство"}
     - {id: 672, cat: TV/Documentary, desc: "[Док] Всё о доме, быте и дизайне"}
     - {id: 249, cat: TV/Documentary, desc: "[Док] BBC"}
@@ -227,6 +282,7 @@ caps:
     - {id: 2112, cat: TV/Documentary, desc: "[Док] История: Древний мир / Античность / Средневековье"}
     - {id: 1327, cat: TV/Documentary, desc: "[Док] История: Новое и Новейшее время"}
     - {id: 1468, cat: TV/Documentary, desc: "[Док] Эпоха СССР"}
+    - {id: 1280, cat: TV/Documentary, desc: "[Док] Битва экстрасенсов / Теория невероятности / Искатели / Галилео"}
     - {id: 752, cat: TV/Documentary, desc: "[Док] Русские сенсации / Программа Максимум / Профессия репортёр"}
     - {id: 1114, cat: TV/Documentary, desc: "[Док] Паранормальные явления"}
     - {id: 2168, cat: TV/Documentary, desc: "[Док] Альтернативная история и наука"}
@@ -240,9 +296,12 @@ caps:
     - {id: 979, cat: TV/Documentary, desc: "Путешествия и туризм (HD Video)"}
     - {id: 2169, cat: TV/Documentary, desc: "Флора и фауна (HD Video)"}
     - {id: 2166, cat: TV/Documentary, desc: "История (HD Video)"}
+    - {id: 2164, cat: TV/Documentary, desc: "BBC, Discovery, National Geographic, History Channel, Netflix (HD Video)"}
     - {id: 2163, cat: TV/Documentary, desc: "Криминальная документалистика (HD Video)"}
     - {id: 85, cat: TV/Documentary, desc: "Некондиционное видео - Документальные (HD Video)"}
     - {id: 24, cat: TV/Other, desc: "Развлекательные телепередачи и шоу, приколы и юмор"}
+    - {id: 891, cat: TV/Other, desc: "Архив (Приколы и юмор)"}
+    - {id: 523, cat: TV/Other, desc: "Ищу / предлагаю (Приколы и юмор)"}
     - {id: 1959, cat: TV/Other, desc: "[Видео Юмор] Интеллектуальные игры и викторины"}
     - {id: 939, cat: TV/Other, desc: "[Видео Юмор] Реалити и ток-шоу / номинации / показы"}
     - {id: 1481, cat: TV/Other, desc: "[Видео Юмор] Детские телешоу"}
@@ -266,27 +325,35 @@ caps:
     - {id: 926, cat: TV/Sport, desc: "XXV Зимние Олимпийские игры 2026"}
     - {id: 1311, cat: TV/Sport, desc: "Биатлон"}
     - {id: 2171, cat: TV/Sport, desc: "Лыжные гонки"}
+    - {id: 2455, cat: TV/Sport, desc: "Горные лыжи. Сноубординг. Фристайл. Прыжки на лыжах с трамплина.Лыжное двоеборье"}
     - {id: 1434, cat: TV/Sport, desc: "Конькобежный спорт. Шорт-трек. Бобслей. Санный спорт. Скелетон"}
     - {id: 1339, cat: TV/Sport, desc: "Фигурное катание"}
     - {id: 922, cat: TV/Sport, desc: "Хоккей"}
     - {id: 918, cat: TV/Sport, desc: "Керлинг"}
     - {id: 1315, cat: TV/Sport, desc: "XXIV Зимние Олимпийские игры 2022"}
+    - {id: 1336, cat: TV/Sport, desc: "Биатлон.Лыжные гонки.Прыжки с трамп.Двоеборье.Горные лыжи.Сноубординг.Фристайл"}
     - {id: 2350, cat: TV/Sport, desc: "Конькобежный спорт. Шорт-трек. Бобслей. Санный спорт. Скелетон"}
     - {id: 1472, cat: TV/Sport, desc: "Фигурное катание"}
     - {id: 2068, cat: TV/Sport, desc: "Хоккей"}
     - {id: 2016, cat: TV/Sport, desc: "Керлинг"}
     - {id: 1346, cat: TV/Sport, desc: "XXXIII Летние Олимпийские игры 2024"}
+    - {id: 2493, cat: TV/Sport, desc: "Легкая атлетика. Плавание. Прыжки в воду. Синхронное плавание. Гимнастика"}
     - {id: 2103, cat: TV/Sport, desc: "Велоспорт. Академическая гребля. Гребля на байдарках и каноэ"}
+    - {id: 2485, cat: TV/Sport, desc: "Футбол. Баскетбол. Волейбол. Гандбол. Водное поло. Регби. Хоккей на траве"}
     - {id: 2479, cat: TV/Sport, desc: "Теннис. Настольный теннис. Бадминтон"}
     - {id: 2089, cat: TV/Sport, desc: "Фехтование. Стрельба. Стрельба из лука. Современное пятиборье"}
     - {id: 2338, cat: TV/Sport, desc: "Бокс. Борьба Вольная и Греко-римская. Дзюдо. Карате. Тхэквондо"}
     - {id: 927, cat: TV/Sport, desc: "Другие виды спорта"}
     - {id: 1392, cat: TV/Sport, desc: "XXXII Летние Олимпийские игры 2020"}
     - {id: 2475, cat: TV/Sport, desc: "Легкая атлетика. Плавание. Прыжки в воду. Синхронное плавание"}
+    - {id: 2113, cat: TV/Sport, desc: "Гимнастика. Прыжки на батуте. Фехтование. Стрельба. Современное пятиборье"}
     - {id: 2482, cat: TV/Sport, desc: "Велоспорт. Академическая гребля. Гребля на байдарках и каноэ"}
     - {id: 2522, cat: TV/Sport, desc: "Бокс. Борьба Вольная и Греко-римская. Дзюдо. Карате. Тхэквондо"}
+    - {id: 2486, cat: TV/Sport, desc: "Футбол. Баскетбол. Волейбол. Гандбол. Водное поло. Регби. Хоккей на траве"}
     - {id: 1794, cat: TV/Sport, desc: "Другие виды спорта"}
     - {id: 255, cat: TV/Sport, desc: "Спортивные турниры, фильмы и передачи"}
+    - {id: 261, cat: TV/Sport, desc: "Архив (Спорт)"}
+    - {id: 964, cat: TV/Sport, desc: "Архив 2 (Спорт)"}
     - {id: 256, cat: TV/Sport, desc: "Автоспорт"}
     - {id: 1986, cat: TV/Sport, desc: "Мотоспорт"}
     - {id: 660, cat: TV/Sport, desc: "Формула-1 (2026)"}
@@ -345,13 +412,17 @@ caps:
     - {id: 751, cat: TV/Sport, desc: "Обзорные и аналитические передачи"}
     - {id: 497, cat: TV/Sport, desc: "Документальные фильмы (футбол)"}
     - {id: 1697, cat: TV/Sport, desc: "Мини-футбол/Пляжный футбол"}
+    - {id: 1609, cat: TV/Sport, desc: "Архив (Футбол)"}
+    - {id: 1610, cat: TV/Sport, desc: "Архив (Футбол) резервный"}
     - {id: 2004, cat: TV/Sport, desc: "🏀 Баскетбол"}
+    - {id: 1999, cat: TV/Sport, desc: "Архив (Баскетбол)"}
     - {id: 2001, cat: TV/Sport, desc: "Международные соревнования"}
     - {id: 2002, cat: TV/Sport, desc: "NBA / NCAA (до 2000 г.)"}
     - {id: 283, cat: TV/Sport, desc: "NBA / NCAA (2000-2010 гг.)"}
     - {id: 1997, cat: TV/Sport, desc: "NBA / NCAA (2010-2026 гг.)"}
     - {id: 2003, cat: TV/Sport, desc: "Европейский клубный баскетбол"}
     - {id: 2009, cat: TV/Sport, desc: "🏒 Хоккей"}
+    - {id: 2000, cat: TV/Sport, desc: "Архив (Хоккей)"}
     - {id: 2010, cat: TV/Sport, desc: "Хоккей с мячом / Бенди"}
     - {id: 2006, cat: TV/Sport, desc: "Международные турниры"}
     - {id: 2007, cat: TV/Sport, desc: "КХЛ"}
@@ -360,11 +431,14 @@ caps:
     - {id: 2008, cat: TV/Sport, desc: "СССР - Канада"}
     - {id: 126, cat: TV/Sport, desc: "Документальные фильмы и аналитика"}
     - {id: 845, cat: TV/Sport, desc: "Рестлинг"}
+    - {id: 1476, cat: TV/Sport, desc: "Общение (Рестлинг)"}
     - {id: 343, cat: TV/Sport, desc: "Professional Wrestling"}
     - {id: 2111, cat: TV/Sport, desc: "Independent Wrestling"}
     - {id: 1527, cat: TV/Sport, desc: "International Wrestling"}
     - {id: 2069, cat: TV/Sport, desc: "Oldschool Wrestling"}
     - {id: 1323, cat: TV/Sport, desc: "Documentary Wrestling"}
+    - {id: 2312, cat: TV/Sport, desc: "Архив (Рестлинг)"}
+    - {id: 2058, cat: Books, desc: "Правила 'Книг и журналов', помощь, предложения по улучшению, сканирование"}
     - {id: 1411, cat: Books, desc: "Сканирование, обработка сканов"}
     - {id: 21, cat: Books, desc: "Книги и журналы (общий раздел)"}
     - {id: 2157, cat: Books, desc: "Кино, театр, ТВ, мультипликация, цирк"}
@@ -378,7 +452,9 @@ caps:
     - {id: 2223, cat: Books, desc: "Путешествия и туризм"}
     - {id: 2447, cat: Books, desc: "Знаменитости и кумиры"}
     - {id: 39, cat: Books, desc: "Разное (книги)"}
+    - {id: 2086, cat: Books, desc: "Самиздат, статьи из журналов, фрагменты книг, любительские переводы"}
     - {id: 1101, cat: Books, desc: "Для детей, родителей и учителей"}
+    - {id: 745, cat: Books, desc: "Учебная литература для детского сада и начальной школы (до 4 класса)"}
     - {id: 1689, cat: Books, desc: "Учебная литература для старших классов (5-11 класс)"}
     - {id: 2336, cat: Books, desc: "Учителям и педагогам"}
     - {id: 2337, cat: Books, desc: "Научно-популярная и познавательная литература (для детей)"}
@@ -454,6 +530,8 @@ caps:
     - {id: 1528, cat: Books, desc: "Нормативная документация"}
     - {id: 2032, cat: Books, desc: "Журналы: научные, научно-популярные, радио и др."}
     - {id: 919, cat: Books, desc: "Ноты и Музыкальная литература"}
+    - {id: 947, cat: Books, desc: "Архив (Ноты и Музыкальная литература)"}
+    - {id: 945, cat: Books, desc: "Поиск и обсуждение (Ноты и Музыкальная литература)"}
     - {id: 944, cat: Books, desc: "Академическая музыка (Ноты и Media CD)"}
     - {id: 980, cat: Books, desc: "Другие направления (Ноты, табулатуры)"}
     - {id: 946, cat: Books, desc: "Самоучители и Школы"}
@@ -559,6 +637,8 @@ caps:
     - {id: 2314, cat: Books, desc: "Популярная медицинская периодика (газеты и журналы)"}
     - {id: 2132, cat: Books, desc: "Нетрадиционная, народная медицина и популярные книги о здоровье"}
     - {id: 2131, cat: Books, desc: "Ветеринария, разное"}
+    - {id: 71, cat: Books, desc: "Архив (Книги и журналы)"}
+    - {id: 2354, cat: Books/Foreign, desc: "Объявления, предложения, помощь по разделу"}
     - {id: 2362, cat: Books/Foreign, desc: "Иностранные языки для взрослых"}
     - {id: 1265, cat: Books/Foreign, desc: "Английский язык (для взрослых)"}
     - {id: 1266, cat: Books/Foreign, desc: "Немецкий язык"}
@@ -589,7 +669,9 @@ caps:
     - {id: 1501, cat: Books/Foreign, desc: "Аудиокниги на английском языке"}
     - {id: 1580, cat: Books/Foreign, desc: "Аудиокниги на немецком языке"}
     - {id: 525, cat: Books/Foreign, desc: "Аудиокниги на других иностранных языках"}
+    - {id: 1271, cat: Books/Foreign, desc: "Архив (Иностранные языки)"}
     - {id: 610, cat: Other, desc: "Видеоуроки и обучающие интерактивные DVD"}
+    - {id: 628, cat: Other, desc: "Архив (Видеоуроки)"}
     - {id: 1568, cat: Other, desc: "Кулинария"}
     - {id: 1542, cat: Other, desc: "Спорт"}
     - {id: 2335, cat: Other, desc: "Фитнес - Кардио-Силовые Тренировки"}
@@ -629,6 +711,7 @@ caps:
     - {id: 2138, cat: Other, desc: "Здоровье"}
     - {id: 615, cat: Other, desc: "Разное"}
     - {id: 1581, cat: Other, desc: "Боевые искусства (Видеоуроки)"}
+    - {id: 1582, cat: Other, desc: "Архив (Боевые искусства)"}
     - {id: 1590, cat: Other, desc: "Айкидо и айки-дзюцу"}
     - {id: 1587, cat: Other, desc: "Вин чун"}
     - {id: 1594, cat: Other, desc: "Джиу-джитсу"}
@@ -642,6 +725,7 @@ caps:
     - {id: 1592, cat: Other, desc: "Ушу"}
     - {id: 1595, cat: Other, desc: "Разное"}
     - {id: 1556, cat: Other, desc: "Компьютерные видеоуроки и обучающие интерактивные DVD"}
+    - {id: 1557, cat: Other, desc: "Архив (Компьютерные видеоуроки)"}
     - {id: 2539, cat: Other, desc: "Machine/Deep Learning, Neural Networks"}
     - {id: 1560, cat: Other, desc: "Компьютерные сети и безопасность"}
     - {id: 1991, cat: Other, desc: "Devops"}
@@ -664,6 +748,12 @@ caps:
     - {id: 1566, cat: Other, desc: "Работа с видео"}
     - {id: 1573, cat: Other, desc: "Работа со звуком"}
     - {id: 1567, cat: Other, desc: "Разное (Компьютерные видеоуроки)"}
+    - {id: 395, cat: Audio/Audiobook, desc: "Новости, объявления, полезная информация"}
+    - {id: 396, cat: Audio/Audiobook, desc: "Архив (Аудиокниги)"}
+    - {id: 2322, cat: Audio/Audiobook, desc: "Общение, обсуждения, поиск аудиокниг"}
+    - {id: 2167, cat: Audio/Audiobook, desc: "Авторы"}
+    - {id: 1993, cat: Audio/Audiobook, desc: "Исполнители"}
+    - {id: 2321, cat: Audio/Audiobook, desc: "Предложения по улучшению категории 'Аудиокниги'"}
     - {id: 2326, cat: Audio/Audiobook, desc: "Радиоспектакли, история, мемуары"}
     - {id: 574, cat: Audio/Audiobook, desc: "[Аудио] Радиоспектакли и литературные чтения"}
     - {id: 1036, cat: Audio/Audiobook, desc: "[Аудио] Биографии и мемуары"}
@@ -672,6 +762,7 @@ caps:
     - {id: 2388, cat: Audio/Audiobook, desc: "[Аудио] Зарубежная фантастика, фэнтези, мистика, ужасы, фанфики"}
     - {id: 2387, cat: Audio/Audiobook, desc: "[Аудио] Российская фантастика, фэнтези, мистика, ужасы, фанфики"}
     - {id: 661, cat: Audio/Audiobook, desc: "[Аудио] Любовно-фантастический роман"}
+    - {id: 2348, cat: Audio/Audiobook, desc: "[Аудио] Сборники/разное Фантастика, фэнтези, мистика, ужасы, фанфики"}
     - {id: 2327, cat: Audio/Audiobook, desc: "Художественная литература"}
     - {id: 695, cat: Audio/Audiobook, desc: "[Аудио] Поэзия"}
     - {id: 399, cat: Audio/Audiobook, desc: "[Аудио] Зарубежная литература"}
@@ -694,6 +785,8 @@ caps:
     - {id: 2165, cat: Audio/Audiobook, desc: "[Аудио] Разное"}
     - {id: 401, cat: Audio/Audiobook, desc: "[Аудио] Некондиционные раздачи"}
     - {id: 1964, cat: Other, desc: "Ремонт и эксплуатация транспортных средств"}
+    - {id: 1966, cat: Other, desc: "Архив (Авто и мото)"}
+    - {id: 1972, cat: Other, desc: "Общение"}
     - {id: 1973, cat: Other, desc: "Оригинальные каталоги по подбору запчастей"}
     - {id: 1974, cat: Other, desc: "Неоригинальные каталоги по подбору запчастей"}
     - {id: 1975, cat: Other, desc: "Программы по диагностике и ремонту"}
@@ -713,7 +806,15 @@ caps:
     - {id: 2151, cat: Other, desc: "Top Gear/Топ Гир"}
     - {id: 1983, cat: Other, desc: "Тест драйв/Обзоры/Автосалоны"}
     - {id: 1984, cat: Other, desc: "Тюнинг/форсаж"}
+    - {id: 757, cat: Audio, desc: "Предложения по улучшению музыкальных разделов"}
+    - {id: 215, cat: Audio, desc: "Помощь по музыкальным разделам"}
+    - {id: 1872, cat: Audio, desc: "Инструкции, руководства, обзоры"}
+    - {id: 675, cat: Audio, desc: "Вопросы и ответы по музыкальным разделам"}
+    - {id: 1874, cat: Audio, desc: "Поиск музыки"}
     - {id: 409, cat: Audio, desc: "Классическая и современная академическая музыка"}
+    - {id: 792, cat: Audio, desc: "Каталоги раздач классической и академической музыки"}
+    - {id: 435, cat: Audio, desc: "Классическая музыка (обсуждение)"}
+    - {id: 443, cat: Audio, desc: "Архив (Классическая музыка)"}
     - {id: 560, cat: Audio/Lossless, desc: "Полные собрания сочинений и многодисковые издания (lossless)"}
     - {id: 794, cat: Audio/Lossless, desc: "Опера (lossless)"}
     - {id: 556, cat: Audio/Lossless, desc: "Вокальная музыка (lossless)"}
@@ -727,7 +828,9 @@ caps:
     - {id: 2309, cat: Audio, desc: "Вокальная и хоровая музыка (lossy)"}
     - {id: 2310, cat: Audio, desc: "Оркестровая музыка (lossy)"}
     - {id: 2311, cat: Audio, desc: "Камерная и сольная инструментальная музыка (lossy)"}
+    - {id: 969, cat: Audio/Lossless, desc: "Классика в современной обработке, Classical Crossover (lossy и lossless)"}
     - {id: 1125, cat: Audio, desc: "Фольклор, Народная и Этническая музыка"}
+    - {id: 1140, cat: Audio, desc: "Архив (Фольклор, Народная и Этническая музыка)"}
     - {id: 1130, cat: Audio, desc: "Восточноевропейский фолк (lossy)"}
     - {id: 1131, cat: Audio/Lossless, desc: "Восточноевропейский фолк (lossless)"}
     - {id: 1132, cat: Audio, desc: "Западноевропейский фолк (lossy)"}
@@ -739,11 +842,14 @@ caps:
     - {id: 2430, cat: Audio/Lossless, desc: "Этническая музыка Индии (lossless)"}
     - {id: 1283, cat: Audio, desc: "Этническая музыка Африки и Ближнего Востока (lossy)"}
     - {id: 2085, cat: Audio/Lossless, desc: "Этническая музыка Африки и Ближнего Востока (lossless)"}
+    - {id: 1282, cat: Audio/Lossless, desc: "Фольклорная, Народная, Эстрадная музыка Кавказа и Закавказья (lossy и lossless)"}
     - {id: 1284, cat: Audio, desc: "Этническая музыка Северной и Южной Америки (lossy)"}
     - {id: 1285, cat: Audio/Lossless, desc: "Этническая музыка Северной и Южной Америки (lossless)"}
+    - {id: 1138, cat: Audio/Lossless, desc: "Этническая музыка Австралии, Тихого и Индийского океанов (lossy и lossless)"}
     - {id: 1136, cat: Audio, desc: "Country, Bluegrass (lossy)"}
     - {id: 1137, cat: Audio/Lossless, desc: "Country, Bluegrass (lossless)"}
     - {id: 1849, cat: Audio, desc: "New Age, Relax, Meditative & Flamenco"}
+    - {id: 1846, cat: Audio, desc: "Архив (New Age, Relax, Meditative & Flamenco)"}
     - {id: 1126, cat: Audio, desc: "New Age & Meditative (lossy)"}
     - {id: 1127, cat: Audio/Lossless, desc: "New Age & Meditative (lossless)"}
     - {id: 1134, cat: Audio, desc: "Фламенко и акустическая гитара (lossy)"}
@@ -751,6 +857,7 @@ caps:
     - {id: 2018, cat: Audio/Lossless, desc: "Музыка для бальных танцев (lossy и lossless)"}
     - {id: 855, cat: Audio, desc: "Звуки природы"}
     - {id: 408, cat: Audio, desc: "Рэп, Хип-Хоп, R'n'B"}
+    - {id: 448, cat: Audio, desc: "Архив (Рэп, Хип-Хоп, R'n'B)"}
     - {id: 441, cat: Audio, desc: "Отечественный Рэп, Хип-Хоп (lossy)"}
     - {id: 1173, cat: Audio, desc: "Отечественный R'n'B (lossy)"}
     - {id: 1486, cat: Audio/Lossless, desc: "Отечественный Рэп, Хип-Хоп, R'n'B (lossless)"}
@@ -759,6 +866,7 @@ caps:
     - {id: 909, cat: Audio/Lossless, desc: "Зарубежный Рэп, Хип-Хоп (lossless)"}
     - {id: 1665, cat: Audio/Lossless, desc: "Зарубежный R'n'B (lossless)"}
     - {id: 1760, cat: Audio, desc: "Reggae, Ska, Dub"}
+    - {id: 1761, cat: Audio, desc: "Архив (Reggae, Ska, Dub)"}
     - {id: 1764, cat: Audio/Lossless, desc: "Rocksteady, Early Reggae, Ska-Jazz, Trad.Ska (lossy и lossless)"}
     - {id: 1767, cat: Audio, desc: "3rd Wave Ska (lossy)"}
     - {id: 1769, cat: Audio, desc: "Ska-Punk, Ska-Core (lossy)"}
@@ -770,6 +878,7 @@ caps:
     - {id: 1772, cat: Audio/Lossless, desc: "Отечественный Reggae, Ska, Dub (lossy и lossless)"}
     - {id: 2233, cat: Audio/Lossless, desc: "Reggae, Ska, Dub (компиляции) (lossy и lossless)"}
     - {id: 416, cat: Audio, desc: "Саундтреки, караоке и мюзиклы"}
+    - {id: 473, cat: Audio, desc: "Архив (Саундтреки, караоке и мюзиклы)"}
     - {id: 2377, cat: Audio, desc: "Караоке"}
     - {id: 468, cat: Audio/Lossless, desc: "Минусовки (lossy и lossless)"}
     - {id: 691, cat: Audio/Lossless, desc: "Саундтреки к отечественным фильмам (lossless)"}
@@ -788,6 +897,7 @@ caps:
     - {id: 2431, cat: Audio/Lossless, desc: "Аранжировки музыки из игр (lossy и lossless)"}
     - {id: 880, cat: Audio/Lossless, desc: "Мюзикл (lossy и lossless)"}
     - {id: 1215, cat: Audio, desc: "Шансон, Авторская и Военная песня"}
+    - {id: 1218, cat: Audio, desc: "Архив (Шансон, Авторская и Военная песня)"}
     - {id: 1220, cat: Audio/Lossless, desc: "Отечественный шансон (lossless)"}
     - {id: 1221, cat: Audio, desc: "Отечественный шансон (lossy)"}
     - {id: 1334, cat: Audio, desc: "Сборники отечественного шансона (lossy)"}
@@ -797,18 +907,21 @@ caps:
     - {id: 1225, cat: Audio, desc: "Авторская песня (lossy)"}
     - {id: 1226, cat: Audio/Lossless, desc: "Менестрели и ролевики (lossy и lossless)"}
     - {id: 782, cat: Audio, desc: "Лейбл- и сцен-паки. Неофициальные сборники и ремастеринги. AI-музыка"}
+    - {id: 935, cat: Audio, desc: "Архив (Лейбл- и Сцен-паки. Неофициальные сборники и ремастеринги)"}
     - {id: 577, cat: Audio/Lossless, desc: "AI-Music - музыка ИИ, нейросетей (lossy, lossless и hi-res)"}
     - {id: 1842, cat: Audio/Lossless, desc: "Лейбл-паки (lossless)"}
     - {id: 1648, cat: Audio, desc: "Лейбл-паки, Сцен-паки (lossy)"}
     - {id: 134, cat: Audio/Lossless, desc: "Неофициальные сборники и ремастеринги (lossless)"}
     - {id: 965, cat: Audio, desc: "Неофициальные сборники (lossy)"}
     - {id: 2495, cat: Audio, desc: "Отечественная поп-музыка"}
+    - {id: 2496, cat: Audio, desc: "Архив (Отечественная поп-музыка)"}
     - {id: 424, cat: Audio, desc: "Популярная музыка России и стран бывшего СССР (lossy)"}
     - {id: 1361, cat: Audio, desc: "Популярная музыка России и стран бывшего СССР (сборники) (lossy)"}
     - {id: 425, cat: Audio/Lossless, desc: "Популярная музыка России и стран бывшего СССР (lossless)"}
     - {id: 1635, cat: Audio, desc: "Советская эстрада, ретро, романсы (lossy)"}
     - {id: 1634, cat: Audio/Lossless, desc: "Советская эстрада, ретро, романсы (lossless)"}
     - {id: 2497, cat: Audio, desc: "Зарубежная поп-музыка"}
+    - {id: 2498, cat: Audio, desc: "Архив (Зарубежная поп-музыка)"}
     - {id: 428, cat: Audio, desc: "Зарубежная поп-музыка (lossy)"}
     - {id: 1362, cat: Audio, desc: "Зарубежная поп-музыка (сборники) (lossy)"}
     - {id: 429, cat: Audio/Lossless, desc: "Зарубежная поп-музыка (lossless)"}
@@ -824,6 +937,7 @@ caps:
     - {id: 2270, cat: Audio/Lossless, desc: "Easy Listening, Instrumental Pop (lossless)"}
     - {id: 1351, cat: Audio/Lossless, desc: "Сборники песен для детей (lossy и lossless)"}
     - {id: 2499, cat: Audio, desc: "Eurodance, Disco, Hi-NRG"}
+    - {id: 2506, cat: Audio, desc: "Архив (Eurodance, Disco, Hi-NRG)"}
     - {id: 2503, cat: Audio, desc: "Eurodance, Euro-House, Technopop (lossy)"}
     - {id: 2504, cat: Audio, desc: "Eurodance, Euro-House, Technopop (сборники) (lossy)"}
     - {id: 2502, cat: Audio/Lossless, desc: "Eurodance, Euro-House, Technopop (lossless)"}
@@ -831,6 +945,8 @@ caps:
     - {id: 2505, cat: Audio, desc: "Disco, Italo-Disco, Euro-Disco, Hi-NRG (сборники) (lossy)"}
     - {id: 2500, cat: Audio/Lossless, desc: "Disco, Italo-Disco, Euro-Disco, Hi-NRG (lossless)"}
     - {id: 2267, cat: Audio, desc: "Зарубежный джаз"}
+    - {id: 2299, cat: Audio, desc: "Общение на джазовые темы"}
+    - {id: 2272, cat: Audio, desc: "Архив (Зарубежный джаз)"}
     - {id: 2277, cat: Audio/Lossless, desc: "Early Jazz, Swing, Gypsy (lossless)"}
     - {id: 2278, cat: Audio/Lossless, desc: "Bop (lossless)"}
     - {id: 2279, cat: Audio/Lossless, desc: "Mainstream Jazz, Cool (lossless)"}
@@ -844,17 +960,21 @@ caps:
     - {id: 2286, cat: Audio/Lossless, desc: "Сборники зарубежного джаза (lossless)"}
     - {id: 2287, cat: Audio, desc: "Зарубежный джаз (lossy)"}
     - {id: 2268, cat: Audio, desc: "Зарубежный блюз"}
+    - {id: 2300, cat: Audio, desc: "Общение на блюзовые темы"}
+    - {id: 2273, cat: Audio, desc: "Архив (Зарубежный блюз)"}
     - {id: 2293, cat: Audio/Lossless, desc: "Blues (Texas, Chicago, Modern and Others) (lossless)"}
     - {id: 2292, cat: Audio/Lossless, desc: "Blues-rock (lossless)"}
     - {id: 2290, cat: Audio/Lossless, desc: "Roots, Pre-War Blues, Early R&B, Gospel (lossless)"}
     - {id: 2289, cat: Audio/Lossless, desc: "Зарубежный блюз (сборники; Tribute VA) (lossless)"}
     - {id: 2288, cat: Audio, desc: "Зарубежный блюз (lossy)"}
     - {id: 2269, cat: Audio, desc: "Отечественный джаз и блюз"}
+    - {id: 2274, cat: Audio, desc: "Архив (Отечественный джаз и блюз)"}
     - {id: 2297, cat: Audio/Lossless, desc: "Отечественный джаз (lossless)"}
     - {id: 2295, cat: Audio, desc: "Отечественный джаз (lossy)"}
     - {id: 2296, cat: Audio/Lossless, desc: "Отечественный блюз (lossless)"}
     - {id: 2298, cat: Audio, desc: "Отечественный блюз (lossy)"}
     - {id: 1698, cat: Audio, desc: "Зарубежный Rock"}
+    - {id: 733, cat: Audio, desc: "Архив (Зарубежный Rock)"}
     - {id: 1702, cat: Audio/Lossless, desc: "Classic Rock & Hard Rock (lossless)"}
     - {id: 1703, cat: Audio, desc: "Classic Rock & Hard Rock (lossy)"}
     - {id: 1704, cat: Audio/Lossless, desc: "Progressive & Art-Rock (lossless)"}
@@ -874,6 +994,8 @@ caps:
     - {id: 1714, cat: Audio/Lossless, desc: "Восточноазиатский рок (lossless)"}
     - {id: 1715, cat: Audio, desc: "Восточноазиатский рок (lossy)"}
     - {id: 1716, cat: Audio, desc: "Зарубежный Metal"}
+    - {id: 1717, cat: Audio, desc: "Архив (Зарубежный Metal)"}
+    - {id: 1718, cat: Audio, desc: "Для общения пользователей (Metal)"}
     - {id: 1796, cat: Audio/Lossless, desc: "Avant-garde, Experimental Metal (lossless)"}
     - {id: 1797, cat: Audio, desc: "Avant-garde, Experimental Metal (lossy)"}
     - {id: 1719, cat: Audio/Lossless, desc: "Black (lossless)"}
@@ -895,6 +1017,7 @@ caps:
     - {id: 2230, cat: Audio/Lossless, desc: "Сборники (lossless)"}
     - {id: 2231, cat: Audio, desc: "Сборники (lossy)"}
     - {id: 1732, cat: Audio, desc: "Зарубежные Alternative, Punk, Independent"}
+    - {id: 1733, cat: Audio, desc: "Архив (Alternative, Punk, Independent)"}
     - {id: 1736, cat: Audio/Lossless, desc: "Alternative & Nu-metal (lossless)"}
     - {id: 1737, cat: Audio, desc: "Alternative & Nu-metal (lossy)"}
     - {id: 1738, cat: Audio/Lossless, desc: "Punk, Hardcore (lossless)"}
@@ -914,6 +1037,7 @@ caps:
     - {id: 2175, cat: Audio/Lossless, desc: "Avant-garde, Experimental Rock (lossless)"}
     - {id: 2174, cat: Audio, desc: "Avant-garde, Experimental Rock (lossy)"}
     - {id: 722, cat: Audio, desc: "Отечественный Rock, Metal"}
+    - {id: 736, cat: Audio, desc: "Архив (Отечественный Рок)"}
     - {id: 737, cat: Audio/Lossless, desc: "Rock (lossless)"}
     - {id: 738, cat: Audio, desc: "Rock (lossy)"}
     - {id: 464, cat: Audio/Lossless, desc: "Alternative, Punk, Independent (lossless)"}
@@ -923,15 +1047,18 @@ caps:
     - {id: 951, cat: Audio/Lossless, desc: "Rock на языках народов xUSSR (lossless)"}
     - {id: 952, cat: Audio, desc: "Rock на языках народов xUSSR (lossy)"}
     - {id: 1821, cat: Audio, desc: "Trance, Goa Trance, Psy-Trance, PsyChill, Ambient, Dub"}
+    - {id: 1845, cat: Audio, desc: "Архив (Trance, Goa Trance, Psy-Trance, PsyChill, Ambient, Dub)"}
     - {id: 1844, cat: Audio/Lossless, desc: "Goa Trance, Psy-Trance (lossless)"}
     - {id: 1822, cat: Audio, desc: "Goa Trance, Psy-Trance (lossy)"}
     - {id: 1894, cat: Audio/Lossless, desc: "PsyChill, Ambient, Dub (lossless)"}
     - {id: 1895, cat: Audio, desc: "PsyChill, Ambient, Dub (lossy)"}
+    - {id: 460, cat: Audio, desc: "Goa Trance, Psy-Trance, PsyChill, Ambient, Dub (Live Sets, Mixes) (lossy)"}
     - {id: 1818, cat: Audio/Lossless, desc: "Trance (lossless)"}
     - {id: 1819, cat: Audio, desc: "Trance (lossy)"}
     - {id: 1847, cat: Audio, desc: "Trance (Singles, EPs) (lossy)"}
     - {id: 1824, cat: Audio, desc: "Trance (Radioshows, Podcasts, Live Sets, Mixes) (lossy)"}
     - {id: 1807, cat: Audio, desc: "House, Techno, Hardcore, Hardstyle, Jumpstyle"}
+    - {id: 1848, cat: Audio, desc: "Архив (House, Techno, Hardcore, Hardstyle, Jumpstyle)"}
     - {id: 1829, cat: Audio/Lossless, desc: "Hardcore, Hardstyle, Jumpstyle (lossless)"}
     - {id: 1830, cat: Audio, desc: "Hardcore, Hardstyle, Jumpstyle (lossy)"}
     - {id: 1831, cat: Audio, desc: "Hardcore, Hardstyle, Jumpstyle (vinyl, web)"}
@@ -945,6 +1072,7 @@ caps:
     - {id: 1827, cat: Audio, desc: "Techno (Radioshows, Podcasts, Livesets, Mixes)"}
     - {id: 1828, cat: Audio, desc: "Techno (Singles, EPs) (lossy)"}
     - {id: 1808, cat: Audio, desc: "Drum & Bass, Jungle, Breakbeat, Dubstep, IDM, Electro"}
+    - {id: 1851, cat: Audio, desc: "Архив (Drum & Bass, Jungle, Electro, Breakbeat, IDM)"}
     - {id: 797, cat: Audio/Lossless, desc: "Electro, Electro-Freestyle, Nu Electro (lossless)"}
     - {id: 1805, cat: Audio, desc: "Electro, Electro-Freestyle, Nu Electro (lossy)"}
     - {id: 1832, cat: Audio/Lossless, desc: "Drum & Bass, Jungle (lossless)"}
@@ -959,18 +1087,23 @@ caps:
     - {id: 1841, cat: Audio, desc: "IDM (lossy)"}
     - {id: 2229, cat: Audio, desc: "IDM Discography & Collections (lossy)"}
     - {id: 1809, cat: Audio, desc: "Chillout, Lounge, Downtempo, Trip-Hop"}
+    - {id: 1854, cat: Audio, desc: "Архив (Chillout, Lounge, Downtempo, Trip-Hop)"}
     - {id: 1861, cat: Audio/Lossless, desc: "Chillout, Lounge, Downtempo (lossless)"}
     - {id: 1862, cat: Audio, desc: "Chillout, Lounge, Downtempo (lossy)"}
     - {id: 1947, cat: Audio/Lossless, desc: "Nu Jazz, Acid Jazz, Future Jazz (lossless)"}
     - {id: 1946, cat: Audio, desc: "Nu Jazz, Acid Jazz, Future Jazz (lossy)"}
     - {id: 1945, cat: Audio/Lossless, desc: "Trip Hop, Abstract Hip-Hop (lossless)"}
     - {id: 1944, cat: Audio, desc: "Trip Hop, Abstract Hip-Hop (lossy)"}
+    - {id: 1810, cat: Audio, desc: "Traditional Electronic, Ambient, Modern Classical, Electroacoustic, Experimental"}
+    - {id: 1870, cat: Audio, desc: "Архив (Traditional Electronic, Ambient, Experimental)"}
     - {id: 1864, cat: Audio/Lossless, desc: "Traditional Electronic, Ambient (lossless)"}
     - {id: 1865, cat: Audio, desc: "Traditional Electronic, Ambient (lossy)"}
     - {id: 1871, cat: Audio/Lossless, desc: "Modern Classical, Electroacoustic (lossless)"}
     - {id: 1867, cat: Audio, desc: "Modern Classical, Electroacoustic (lossy)"}
     - {id: 1869, cat: Audio/Lossless, desc: "Experimental (lossless)"}
     - {id: 1873, cat: Audio, desc: "Experimental (lossy)"}
+    - {id: 1811, cat: Audio, desc: "Industrial, Noise, EBM, Dark Electro, Aggrotech, Cyberpunk, Synthpop, New Wave"}
+    - {id: 1883, cat: Audio, desc: "Архив (Industrial, Noise, EBM, Dark Electro, Aggrotech, Synthpop, New Wave)"}
     - {id: 1868, cat: Audio/Lossless, desc: "EBM, Dark Electro, Aggrotech (lossless)"}
     - {id: 1875, cat: Audio, desc: "EBM, Dark Electro, Aggrotech (lossy)"}
     - {id: 1877, cat: Audio/Lossless, desc: "Industrial, Noise (lossless)"}
@@ -982,8 +1115,12 @@ caps:
     - {id: 465, cat: Audio, desc: "Synthwave, Spacesynth, Dreamwave, Retrowave, Outrun (lossy)"}
     - {id: 1866, cat: Audio/Lossless, desc: "Darkwave, Neoclassical, Ethereal, Dungeon Synth (lossless)"}
     - {id: 406, cat: Audio, desc: "Darkwave, Neoclassical, Ethereal, Dungeon Synth (lossy)"}
+    - {id: 1239, cat: Audio/Lossless, desc: "Архив (Hi-Res форматы, оцифровки)"}
+    - {id: 1785, cat: Audio/Lossless, desc: "Для общения (Hi-Res, оцифровки)"}
+    - {id: 1115, cat: Audio/Lossless, desc: "Инструкции по оцифровкам, Hi-Res и многоканальному аудио"}
     - {id: 1299, cat: Audio/Lossless, desc: "Hi-Res stereo и многоканальная музыка"}
     - {id: 1163, cat: Audio/Lossless, desc: "Многоканальная музыка в формате Dolby Atmos"}
+    - {id: 1164, cat: Audio/Lossless, desc: "Классическая вокальная и хоровая музыка, Classical Crossover (Hi-Res)"}
     - {id: 1884, cat: Audio/Lossless, desc: "Классическая инструментальная музыка, Classical Crossover (Hi-Res)"}
     - {id: 1885, cat: Audio/Lossless, desc: "Поп-музыка (Hi-Res)"}
     - {id: 2513, cat: Audio/Lossless, desc: "New Age, Relax, Meditative & Flamenco (Hi-Res)"}
@@ -1020,12 +1157,18 @@ caps:
     - {id: 1170, cat: Audio/Lossless, desc: "Конверсии SACD"}
     - {id: 1759, cat: Audio/Lossless, desc: "Конверсии Blu-Ray, ADVD и DVD-Audio"}
     - {id: 1852, cat: Audio/Lossless, desc: "Апмиксы-Upmixes"}
+    - {id: 1853, cat: Audio/Video, desc: "Помощь по музыкальным видео"}
+    - {id: 1455, cat: Audio/Video, desc: "Правила и Инструкции по работе с Видео, DVD Видео, HD Видео"}
+    - {id: 2510, cat: Audio/Video, desc: "Для общения пользователей"}
     - {id: 413, cat: Audio/Video, desc: "Музыкальное SD видео"}
+    - {id: 2402, cat: Audio/Video, desc: "Архив (Музыкальное SD видео)"}
     - {id: 445, cat: Audio/Video, desc: "Классическая и современная академическая музыка (Видео)"}
     - {id: 702, cat: Audio/Video, desc: "Опера, Оперетта и Мюзикл (Видео)"}
     - {id: 1990, cat: Audio/Video, desc: "Балет и современная хореография (Видео)"}
     - {id: 1793, cat: Audio/Video, desc: "Классика в современной обработке, Classical Crossover (Видео)"}
     - {id: 1141, cat: Audio/Video, desc: "Фольклор, Народная и Этническая музыка и фламенко (Видео)"}
+    - {id: 1775, cat: Audio/Video, desc: "New Age, Relax, Meditative, Рэп, Хип-Хоп, R'n'B, Reggae, Ska, Dub (Видео)"}
+    - {id: 1227, cat: Audio/Video, desc: "Зарубежный и Отечественный Шансон, Авторская и Военная песня (Видео)"}
     - {id: 475, cat: Audio/Video, desc: "Музыка других жанров, Советская эстрада, ретро, романсы (Видео)"}
     - {id: 1121, cat: Audio/Video, desc: "Отечественная поп-музыка (Видео)"}
     - {id: 431, cat: Audio/Video, desc: "Зарубежная Поп-музыка, Eurodance, Disco (Видео)"}
@@ -1040,11 +1183,15 @@ caps:
     - {id: 1912, cat: Audio/Video, desc: "Электронная музыка (Видео)"}
     - {id: 1189, cat: Audio/Video, desc: "Документальные фильмы о музыке и музыкантах (Видео)"}
     - {id: 2403, cat: Audio/Video, desc: "Музыкальное DVD видео"}
+    - {id: 2391, cat: Audio/Video, desc: "Архив (Музыкальное DVD Видео)"}
     - {id: 984, cat: Audio/Video, desc: "Классическая и современная академическая музыка (DVD Видео)"}
     - {id: 983, cat: Audio/Video, desc: "Опера, Оперетта и Мюзикл (DVD Видео)"}
     - {id: 2352, cat: Audio/Video, desc: "Балет и современная хореография (DVD Видео)"}
     - {id: 2384, cat: Audio/Video, desc: "Классика в современной обработке, Classical Crossover (DVD Видео)"}
     - {id: 1142, cat: Audio/Video, desc: "Фольклор, Народная и Этническая музыка и Flamenco (DVD Видео)"}
+    - {id: 1107, cat: Audio/Video, desc: "New Age, Relax, Meditative, Рэп, Хип-Хоп, R'n'B, Reggae, Ska, Dub (DVD Видео)"}
+    - {id: 1228, cat: Audio/Video, desc: "Зарубежный и Отечественный Шансон, Авторская и Военная песня (DVD Видео)"}
+    - {id: 988, cat: Audio/Video, desc: "Музыка других жанров, Советская эстрада, ретро, романсы (DVD Видео)"}
     - {id: 1122, cat: Audio/Video, desc: "Отечественная поп-музыка (DVD Видео)"}
     - {id: 986, cat: Audio/Video, desc: "Зарубежная Поп-музыка, Eurodance, Disco (DVD Видео)"}
     - {id: 2379, cat: Audio/Video, desc: "Восточноазиатская поп-музыка (DVD Видео)"}
@@ -1058,16 +1205,20 @@ caps:
     - {id: 1886, cat: Audio/Video, desc: "Электронная музыка (DVD Видео)"}
     - {id: 2509, cat: Audio/Video, desc: "Документальные фильмы о музыке и музыкантах (DVD Видео)"}
     - {id: 2507, cat: Audio/Video, desc: "Неофициальные DVD видео"}
+    - {id: 2263, cat: Audio/Video, desc: "Классическая музыка, Опера, Балет, Мюзикл (Неофициальные DVD Видео)"}
+    - {id: 2511, cat: Audio/Video, desc: "Шансон, Авторская песня, Сборные концерты, МДЖ (Неофициальные DVD Видео)"}
     - {id: 2264, cat: Audio/Video, desc: "Зарубежная и Отечественная Поп-музыка (Неофициальные DVD Видео)"}
     - {id: 2262, cat: Audio/Video, desc: "Джаз и Блюз (Неофициальные DVD Видео)"}
     - {id: 2261, cat: Audio/Video, desc: "Зарубежная и Отечественная Рок-музыка (Неофициальные DVD Видео)"}
     - {id: 1887, cat: Audio/Video, desc: "Электронная музыка (Неофициальные DVD Видео)"}
     - {id: 2531, cat: Audio/Video, desc: "Прочие жанры (Неофициальные DVD Видео)"}
     - {id: 2400, cat: Audio/Video, desc: "Музыкальное HD видео"}
+    - {id: 2399, cat: Audio/Video, desc: "Архив (Музыкальное HD Видео)"}
     - {id: 1812, cat: Audio/Video, desc: "Классическая и современная академическая музыка (HD Видео)"}
     - {id: 655, cat: Audio/Video, desc: "Опера, Оперетта и Мюзикл (HD Видео)"}
     - {id: 1777, cat: Audio/Video, desc: "Балет и современная хореография (HD Видео)"}
     - {id: 2530, cat: Audio/Video, desc: "Фольклор, Народная, Этническая музыка и Flamenco (HD Видео)"}
+    - {id: 2529, cat: Audio/Video, desc: "New Age, Relax, Meditative, Рэп, Хип-Хоп, R'n'B, Reggae, Ska, Dub (HD Видео)"}
     - {id: 1781, cat: Audio/Video, desc: "Музыка других жанров, Разножанровые сборные концерты (HD видео)"}
     - {id: 2508, cat: Audio/Video, desc: "Зарубежная поп-музыка (HD Видео)"}
     - {id: 2426, cat: Audio/Video, desc: "Отечественная поп-музыка (HD Видео)"}
@@ -1082,6 +1233,7 @@ caps:
     - {id: 2266, cat: Audio/Video, desc: "Официальные апскейлы (Blu-ray, HDTV, WEB-DL)"}
     - {id: 518, cat: Audio/Video, desc: "Некондиционное музыкальное видео (Видео, DVD видео, HD видео)"}
     - {id: 5, cat: PC/Games, desc: "Игры для Windows"}
+    - {id: 1151, cat: PC/Games, desc: "Поиск и обсуждение игр для Windows"}
     - {id: 635, cat: PC/Games, desc: "Новинки"}
     - {id: 127, cat: PC/Games, desc: "Аркады"}
     - {id: 2203, cat: PC/Games, desc: "Файтинги"}
@@ -1106,7 +1258,9 @@ caps:
     - {id: 2206, cat: PC/Games, desc: "Старые игры (Симуляторы)"}
     - {id: 1007, cat: PC/Games, desc: "Старые игры (Аркады)"}
     - {id: 2228, cat: PC/Games, desc: "IBM-PC-несовместимые компьютеры"}
+    - {id: 68, cat: PC/Games, desc: "Архив (Игры)"}
     - {id: 139, cat: PC/Games, desc: "Прочее для Windows-игр"}
+    - {id: 2478, cat: PC/Games, desc: "Дополнения для Train Simulator (Railworks), Microsoft Train Simulator"}
     - {id: 2480, cat: PC/Games, desc: "Моды, дополнения, утилиты, патчи"}
     - {id: 2481, cat: PC/Games, desc: "Русификаторы"}
     - {id: 2142, cat: PC/Games, desc: "Прочее для Microsoft Flight Simulator, Prepar3D, X-Plane"}
@@ -1137,6 +1291,7 @@ caps:
     - {id: 1605, cat: Console, desc: "Switch"}
     - {id: 968, cat: Console, desc: "Dreamcast"}
     - {id: 129, cat: Console, desc: "Остальные платформы"}
+    - {id: 545, cat: Console, desc: "Архив (Игры для консолей)"}
     - {id: 2185, cat: Console, desc: "Видео для консолей"}
     - {id: 2487, cat: Console, desc: "Видео для PS Vita"}
     - {id: 2182, cat: Console, desc: "Фильмы для PSP"}
@@ -1146,6 +1301,7 @@ caps:
     - {id: 2186, cat: Console, desc: "Аниме для PSP"}
     - {id: 700, cat: Console, desc: "Видео для PSP"}
     - {id: 1926, cat: Console, desc: "Видео для PS3 и других консолей"}
+    - {id: 2467, cat: Console, desc: "Архив (Видео для консолей)"}
     - {id: 650, cat: PC/Mobile-Other, desc: "Игры для мобильных устройств"}
     - {id: 2149, cat: PC/Mobile-Other, desc: "Игры для Android"}
     - {id: 2420, cat: PC/Mobile-Other, desc: "Игры для Oculus Quest"}
@@ -1153,18 +1309,25 @@ caps:
     - {id: 1002, cat: PC/Mobile-Other, desc: "Игры для Windows Mobile"}
     - {id: 240, cat: Other, desc: "Игровое видео"}
     - {id: 2415, cat: Other, desc: "Видеопрохождения игр"}
+    - {id: 216, cat: PC, desc: "Правила, помощь, предложения по улучшению категории 'Программы и Дизайн'"}
+    - {id: 1077, cat: PC, desc: "Ищу и предлагаю программу"}
     - {id: 1012, cat: PC/ISO, desc: "Операционные системы от Microsoft"}
+    - {id: 1191, cat: PC/ISO, desc: "Общение (Обсуждения, вопросы/ответы)"}
     - {id: 2489, cat: PC/ISO, desc: "Оригинальные образы Windows"}
     - {id: 2523, cat: PC/ISO, desc: "Сборки Windows 8 и далее"}
     - {id: 2153, cat: PC/ISO, desc: "Сборки Windows XP - Windows 7"}
     - {id: 1019, cat: PC/ISO, desc: "Операционные системы выпущенные до Windows XP"}
     - {id: 1021, cat: PC/ISO, desc: "Серверные ОС (оригинальные + сборки)"}
     - {id: 1025, cat: PC/ISO, desc: "Разное (сборки All-in-One, пакеты обновлений, утилиты, и прочее)"}
+    - {id: 1017, cat: PC/ISO, desc: "Архив (Операционные системы от Microsoft)"}
     - {id: 1376, cat: PC/ISO, desc: "Linux, Unix и другие ОС"}
+    - {id: 1382, cat: PC/ISO, desc: "Помощь и общение"}
     - {id: 1379, cat: PC/ISO, desc: "Операционные системы (Linux, Unix)"}
     - {id: 1381, cat: PC/ISO, desc: "Программное обеспечение (Linux, Unix)"}
     - {id: 1473, cat: PC/ISO, desc: "Другие ОС и ПО под них"}
+    - {id: 1384, cat: PC/ISO, desc: "Архив (Linux)"}
     - {id: 1013, cat: PC, desc: "Системные программы"}
+    - {id: 1196, cat: PC, desc: "Общение (Системные программы)"}
     - {id: 1028, cat: PC, desc: "Работа с жёстким диском"}
     - {id: 1029, cat: PC, desc: "Резервное копирование"}
     - {id: 1030, cat: PC, desc: "Архиваторы и файловые менеджеры"}
@@ -1180,7 +1343,9 @@ caps:
     - {id: 1041, cat: PC, desc: "Изменение интерфейса ОС Windows"}
     - {id: 1636, cat: PC, desc: "Скринсейверы"}
     - {id: 1042, cat: PC, desc: "Разное (Системные программы под Windows)"}
+    - {id: 1026, cat: PC, desc: "Архив (Программы и Дизайн)"}
     - {id: 1014, cat: PC, desc: "Системы для бизнеса, офиса, научной и проектной работы"}
+    - {id: 1198, cat: PC, desc: "Общение (Системы для бизнеса, офиса, научной и проектной работы)"}
     - {id: 2134, cat: PC, desc: "Медицина - интерактивный софт"}
     - {id: 1060, cat: PC, desc: "Всё для дома: кройка, шитьё, кулинария"}
     - {id: 1061, cat: PC, desc: "Офисные системы"}
@@ -1196,6 +1361,7 @@ caps:
     - {id: 1071, cat: PC, desc: "Прочие справочные системы"}
     - {id: 1073, cat: PC, desc: "Разное (Системы для бизнеса, офиса, научной и проектной работы)"}
     - {id: 1052, cat: PC, desc: "Веб-разработка и Программирование"}
+    - {id: 307, cat: PC, desc: "Общение (Веб-разработка и Программирование)"}
     - {id: 1053, cat: PC, desc: "WYSIWYG Редакторы для веб-диза"}
     - {id: 1054, cat: PC, desc: "Текстовые редакторы с подсветкой"}
     - {id: 1055, cat: PC, desc: "Среды программирования, компиляторы и вспомогательные программы"}
@@ -1204,7 +1370,9 @@ caps:
     - {id: 1057, cat: PC, desc: "Скрипты и движки сайтов, CMS а также расширения к ним"}
     - {id: 1018, cat: PC, desc: "Шаблоны для сайтов и CMS"}
     - {id: 1058, cat: PC, desc: "Разное (Веб-разработка и программирование)"}
+    - {id: 1050, cat: PC, desc: "Архив (Веб-разработка и программирование)"}
     - {id: 1016, cat: PC, desc: "Программы для работы с мультимедиа и 3D"}
+    - {id: 1078, cat: PC, desc: "Общение (Программы для работы с мультимедиа и 3D)"}
     - {id: 1195, cat: PC, desc: "Тестовые диски для настройки аудио/видео аппаратуры"}
     - {id: 1079, cat: PC, desc: "Программные комплекты"}
     - {id: 1080, cat: PC, desc: "Плагины для программ компании Adobe"}
@@ -1223,6 +1391,7 @@ caps:
     - {id: 1199, cat: PC, desc: "Плагины для обработки звука"}
     - {id: 1091, cat: PC, desc: "Разное (Программы для работы со звуком)"}
     - {id: 828, cat: PC, desc: "Материалы для мультимедиа и дизайна"}
+    - {id: 838, cat: PC, desc: "Ищу/Предлагаю (Материалы для мультимедиа и дизайна)"}
     - {id: 1357, cat: PC, desc: "Авторские работы"}
     - {id: 890, cat: PC, desc: "Официальные сборники векторных клипартов"}
     - {id: 830, cat: PC, desc: "Прочие векторные клипарты"}
@@ -1242,7 +1411,9 @@ caps:
     - {id: 1679, cat: PC, desc: "Дополнения, стили, кисти, формы, узоры для программ Adobe"}
     - {id: 1011, cat: PC, desc: "Шрифты"}
     - {id: 835, cat: PC, desc: "Разное (Материалы для мультимедиа и дизайна)"}
+    - {id: 837, cat: PC, desc: "Архив (Материалы для мультимедиа и дизайна)"}
     - {id: 1503, cat: PC, desc: "ГИС, системы навигации и карты"}
+    - {id: 1506, cat: PC, desc: "Общение (ГИС, системы навигации и карты)"}
     - {id: 1507, cat: PC, desc: "ГИС (Геоинформационные системы)"}
     - {id: 1526, cat: PC, desc: "Карты, снабженные программной оболочкой"}
     - {id: 1508, cat: PC, desc: "Атласы и карты современные (после 1950 г.)"}
@@ -1263,6 +1434,7 @@ caps:
     - {id: 288, cat: PC/Mobile-Other, desc: "Софт для работы с телефоном"}
     - {id: 292, cat: PC/Mobile-Other, desc: "Прошивки для телефонов"}
     - {id: 291, cat: PC/Mobile-Other, desc: "Обои и темы"}
+    - {id: 296, cat: PC/Mobile-Other, desc: "Архив (Мобильные устройства)"}
     - {id: 957, cat: PC/Mobile-Other, desc: "Видео для мобильных устройств"}
     - {id: 287, cat: PC/Mobile-Other, desc: "Видео для смартфонов и КПК"}
     - {id: 286, cat: PC/Mobile-Other, desc: "Видео в формате 3GP для мобильных"}
@@ -1277,29 +1449,41 @@ caps:
     - {id: 1375, cat: PC/Mac, desc: "Офисные программы (Mac OS)"}
     - {id: 1371, cat: PC/Mac, desc: "Программы для интернета и сетей (Mac OS)"}
     - {id: 1374, cat: PC/Mac, desc: "Другие программы (Mac OS)"}
+    - {id: 1393, cat: PC/Mac, desc: "Архив (Apple Macintosh)"}
     - {id: 1933, cat: PC/Mobile-iOS, desc: "iOS"}
     - {id: 1935, cat: PC/Mobile-iOS, desc: "Программы для iOS"}
     - {id: 1003, cat: PC/Mobile-iOS, desc: "Игры для iOS"}
     - {id: 1937, cat: PC/Mobile-iOS, desc: "Разное для iOS"}
+    - {id: 1934, cat: PC/Mobile-iOS, desc: "Архив (iOS)"}
     - {id: 2235, cat: Movies/Other, desc: "Видео"}
     - {id: 1908, cat: Movies/Other, desc: "Фильмы для iPod, iPhone, iPad"}
     - {id: 864, cat: Movies/Other, desc: "Сериалы для iPod, iPhone, iPad"}
     - {id: 863, cat: Movies/Other, desc: "Мультфильмы для iPod, iPhone, iPad"}
     - {id: 2535, cat: Movies/Other, desc: "Аниме для iPod, iPhone, iPad"}
     - {id: 2534, cat: Movies/Other, desc: "Музыкальное видео для iPod, iPhone, iPad"}
+    - {id: 2239, cat: Movies/Other, desc: "Архив (Видео)"}
     - {id: 2238, cat: Movies/HD, desc: "Видео HD"}
     - {id: 1936, cat: Movies/HD, desc: "Фильмы HD для Apple TV"}
     - {id: 315, cat: Movies/HD, desc: "Сериалы HD для Apple TV"}
     - {id: 1363, cat: Movies/HD, desc: "Мультфильмы HD для Apple TV"}
     - {id: 2082, cat: Movies/HD, desc: "Документальное видео HD для Apple TV"}
     - {id: 2241, cat: Movies/HD, desc: "Музыкальное видео HD для Apple TV"}
+    - {id: 405, cat: Movies/HD, desc: "Архив (Видео HD)"}
     - {id: 2236, cat: Audio/Other, desc: "Аудио"}
     - {id: 1909, cat: Audio/Other, desc: "Аудиокниги (AAC, ALAC)"}
     - {id: 1927, cat: Audio/Other, desc: "Музыка lossless (ALAC)"}
     - {id: 2240, cat: Audio/Other, desc: "Музыка Lossy (AAC-iTunes)"}
     - {id: 2248, cat: Audio/Other, desc: "Музыка Lossy (AAC)"}
     - {id: 2244, cat: Audio/Other, desc: "Музыка Lossy (AAC) (Singles, EPs)"}
+    - {id: 2242, cat: Audio/Other, desc: "Архив (Аудио)"}
+    - {id: 2243, cat: PC/Mac, desc: "F.A.Q."}
+    - {id: 2257, cat: PC/Mac, desc: "Вопросы-ответы Mac OS (для PC- Хакинтош)"}
+    - {id: 2256, cat: PC/Mac, desc: "Вопросы-ответы MAC OS (для Macintosh)"}
+    - {id: 2245, cat: PC/Mac, desc: "iOS"}
+    - {id: 2246, cat: PC/Mac, desc: "Аудио и Видео"}
     - {id: 10, cat: Other, desc: "Разное (раздачи)"}
+    - {id: 760, cat: Other, desc: "Предложения по улучшению раздела 'Разное', помощь по разделу"}
+    - {id: 491, cat: Other, desc: "Архив (Разное)"}
     - {id: 865, cat: Other, desc: "Психоактивные аудиопрограммы"}
     - {id: 1100, cat: Other, desc: "Аватары, Иконки, Смайлы"}
     - {id: 1643, cat: Other, desc: "Живопись, Графика, Скульптура, Digital Art"}
