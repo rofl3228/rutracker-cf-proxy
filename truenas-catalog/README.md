@@ -22,7 +22,7 @@ it is generated in the catalog repository.
    ./.github/scripts/generate_metadata.py --app rutracker-cf-proxy --train community
    ```
    `generate_metadata.py` bumps `version` when it changes metadata; keep `1.0.0` for the first submission.
-6. Open the PR using [PR.md](PR.md) as the description and attach an icon (PNG, square).
+6. Open the PR using [PR.md](PR.md) as the description; the icon is `assets/icon.svg` (PNG render: `assets/icon.png`).
 
 Both test files passed with library 2.3.11 on 2026-09-14 (rendered, deployed, healthy; the definition helper
 wrote the file and exited 0). The default port 30490 was free in the catalog at that time.

@@ -1,3 +1,5 @@
+<img src="assets/icon.svg" alt="" width="96" align="right">
+
 # rutracker-cf-proxy
 
 [![Test & publish image](https://github.com/rofl3228/rutracker-cf-proxy/actions/workflows/docker.yml/badge.svg)](https://github.com/rofl3228/rutracker-cf-proxy/actions/workflows/docker.yml)

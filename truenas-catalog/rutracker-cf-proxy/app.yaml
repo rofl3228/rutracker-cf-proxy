@@ -8,7 +8,7 @@ description: Proxy that lets Prowlarr use Cloudflare-protected RuTracker, using 
   cf_clearance and browser-impersonating requests. Ships a Prowlarr indexer definition.
 home: https://github.com/rofl3228/rutracker-cf-proxy
 host_mounts: []
-icon: https://media.sys.truenas.net/apps/rutracker-cf-proxy/icons/icon.png
+icon: https://media.sys.truenas.net/apps/rutracker-cf-proxy/icons/icon.svg
 keywords:
 - indexer
 - prowlarr

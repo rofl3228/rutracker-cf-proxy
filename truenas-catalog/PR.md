@@ -38,7 +38,8 @@ All tests passed successfully.
 
 Please upload the following to the CDN:
 
-- Icon: [attach]
+- Icon (SVG): https://raw.githubusercontent.com/rofl3228/rutracker-cf-proxy/main/assets/icon.svg
+- Icon (PNG 1024x1024, same design): https://raw.githubusercontent.com/rofl3228/rutracker-cf-proxy/main/assets/icon.png
 
 ## Special Notes
 
