@@ -104,6 +104,8 @@ sudo docker run --rm --network host --env-file .env -v $PWD/scripts:/scripts --e
 
 Исходник определения — `src/rutracker_proxy/definitions/rutracker-proxy.yml`. Категории генерируются из `definitions/rutracker_forums.tsv`: после правок в `scripts/gen_categories.py` запустить `python scripts/gen_categories.py`.
 
+Список форумов берётся из публичного API дерева форумов rutracker. `python scripts/update_forums.py` обновляет TSV и категории и показывает, что изменилось; workflow [Update RuTracker forum list](.github/workflows/update-forums.yml) запускает его по понедельникам (или вручную) и открывает pull request, если есть изменения. Категории новых форумов стоит проверить по описанию PR. Чтобы workflow мог открывать PR, включите Settings → Actions → General → «Allow GitHub Actions to create and approve pull requests».
+
 | Переменная `install-definition` | По умолчанию | Смысл |
 |---|---|---|
 | `DEFINITION_DIR` | `/definitions` | куда класть определение |

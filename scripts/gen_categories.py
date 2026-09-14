@@ -47,6 +47,10 @@ SECTIONS = {
     "Разное": "Other",
     "Обсуждения, встречи, общение": None,
     "Приватные форумы": None,
+    # Sections that exist only in the API forum tree (scripts/update_forums.py), without releases.
+    "ОБХОД БЛОКИРОВОК": None,
+    "Игры и развлечения": None,
+    "Вопросы по форуму и трекеру": None,
 }
 
 # Root forum id -> category for the root and all its subforums.
@@ -120,13 +124,23 @@ def render() -> str:
     return "\n".join(lines)
 
 
+_BLOCK = re.compile(re.escape(BEGIN) + r".*?" + re.escape(END), re.S)
+
+
+def render_yaml(text: str) -> str:
+    """Definition text with the generated categorymappings block replaced."""
+    if not _BLOCK.search(text):
+        raise ValueError(f"markers not found in {YAML}")
+    return _BLOCK.sub(lambda _: render(), text)
+
+
 def main() -> int:
     text = YAML.read_text("utf-8")
-    pattern = re.compile(re.escape(BEGIN) + r".*?" + re.escape(END), re.S)
-    if not pattern.search(text):
-        print(f"markers not found in {YAML}")
+    try:
+        updated = render_yaml(text)
+    except ValueError as e:
+        print(e)
         return 2
-    updated = pattern.sub(lambda _: render(), text)
     if "--check" in sys.argv:
         if updated != text:
             print("categorymappings are out of date: run python scripts/gen_categories.py")

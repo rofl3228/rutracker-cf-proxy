@@ -104,6 +104,8 @@ Adding the indexer:
 
 The definition source is `src/rutracker_proxy/definitions/rutracker-proxy.yml`. Categories are generated from `definitions/rutracker_forums.tsv`: after changing `scripts/gen_categories.py`, run `python scripts/gen_categories.py`.
 
+The forum list follows RuTracker's public forum tree API. `python scripts/update_forums.py` refreshes the TSV and the categories and prints what changed; the [Update RuTracker forum list](.github/workflows/update-forums.yml) workflow runs it every Monday (or manually) and opens a pull request when something changed. Review the categories of added forums in the PR description. For the workflow to open PRs, enable Settings → Actions → General → "Allow GitHub Actions to create and approve pull requests".
+
 | `install-definition` variable | Default | Meaning |
 |---|---|---|
 | `DEFINITION_DIR` | `/definitions` | where to put the definition |
