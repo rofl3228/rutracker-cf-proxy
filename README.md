@@ -104,7 +104,7 @@ Adding the indexer:
 
 The definition source is `src/rutracker_proxy/definitions/rutracker-proxy.yml`. Categories are generated from `definitions/rutracker_forums.tsv`: after changing `scripts/gen_categories.py`, run `python scripts/gen_categories.py`.
 
-The forum list follows RuTracker's public forum tree API. `python scripts/update_forums.py` refreshes the TSV and the categories and prints what changed; the [Update RuTracker forum list](.github/workflows/update-forums.yml) workflow runs it every Monday (or manually) and opens a pull request when something changed. Review the categories of added forums in the PR description. For the workflow to open PRs, enable Settings → Actions → General → "Allow GitHub Actions to create and approve pull requests".
+The forum list follows RuTracker's public forum tree API. `python scripts/update_forums.py` refreshes the TSV and the categories and prints what changed; the [Update RuTracker forum list](.github/workflows/update-forums.yml) workflow runs it every Monday (or manually) and opens a pull request when something changed; the PR also bumps the patch version, so merging it publishes a release. Review the categories of added forums in the PR description. For the workflow to open PRs, enable Settings → Actions → General → "Allow GitHub Actions to create and approve pull requests".
 
 | `install-definition` variable | Default | Meaning |
 |---|---|---|
@@ -119,6 +119,13 @@ GitHub Actions ([.github/workflows/docker.yml](.github/workflows/docker.yml)): t
 Images are published to Docker Hub and GHCR on pushes to `main` (tag `latest`) and on `vX.Y.Z` tags (tags `X.Y.Z` and `X.Y`); every build also gets a `sha-<commit>` tag.
 
 Required repository secrets: `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` (Docker Hub → Account settings → Personal access tokens, Read & Write). GHCR uses the built-in `GITHUB_TOKEN`.
+
+## Releases
+
+A release is a version bump merged into `main`. The [Release](.github/workflows/release.yml) workflow notices a version in `pyproject.toml` that has no tag yet, creates the `vX.Y.Z` tag and a GitHub release with generated notes, and publishes the `X.Y.Z` / `X.Y` images.
+
+- The forum list update PR bumps the patch version itself, so merging it ships a release.
+- Any other release: `python scripts/bump_version.py [patch|minor|major]`, commit, merge into `main`.
 
 ## Development
 

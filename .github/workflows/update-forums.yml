@@ -32,6 +32,17 @@ jobs:
         id: update
         run: python scripts/update_forums.py --summary "$RUNNER_TEMP/forums-summary.md"
 
+      # The PR carries its own patch release: once merged, the Release workflow tags it,
+      # creates the GitHub release and publishes the images.
+      - name: Bump patch version
+        id: bump
+        if: steps.update.outputs.changed == 'true'
+        run: |
+          VERSION=$(python scripts/bump_version.py patch)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          printf '\nMerging this PR releases **v%s** (tag, GitHub release and images are created automatically).\n' "$VERSION" \
+            >> "$RUNNER_TEMP/forums-summary.md"
+
       # Pull requests opened with GITHUB_TOKEN do not trigger other workflows,
       # so the test suite runs here before the PR is created.
       - name: Test
@@ -44,9 +55,11 @@ jobs:
         with:
           branch: automation/update-forums
           delete-branch: true
-          commit-message: Update RuTracker forum list and categories
-          title: Update RuTracker forum list
+          commit-message: Update RuTracker forum list and categories, release ${{ steps.bump.outputs.version }}
+          title: Update RuTracker forum list (v${{ steps.bump.outputs.version }})
           body-path: ${{ runner.temp }}/forums-summary.md
           add-paths: |
             definitions/rutracker_forums.tsv
             src/rutracker_proxy/definitions/rutracker-proxy.yml
+            pyproject.toml
+            src/rutracker_proxy/__init__.py

@@ -6,6 +6,13 @@ on:
     tags: ["v*"]
   pull_request:
   workflow_dispatch:
+  # Called by the Release workflow: tags created with GITHUB_TOKEN do not trigger the tag push above.
+  workflow_call:
+    inputs:
+      version:
+        description: Release version without the "v" prefix, e.g. 0.1.2
+        type: string
+        required: true
 
 permissions:
   contents: read
@@ -53,9 +60,11 @@ jobs:
             ${{ env.DOCKERHUB_IMAGE }}
             ${{ env.GHCR_IMAGE }}
           tags: |
-            type=raw,value=latest,enable={{is_default_branch}}
+            type=raw,value=latest,enable=${{ inputs.version == '' && github.ref_name == github.event.repository.default_branch }}
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{version}},value=v${{ inputs.version }},enable=${{ inputs.version != '' }}
+            type=semver,pattern={{major}}.{{minor}},value=v${{ inputs.version }},enable=${{ inputs.version != '' }}
             type=sha,format=short
 
       - name: Log in to Docker Hub

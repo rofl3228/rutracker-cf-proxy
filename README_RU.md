@@ -104,7 +104,7 @@ sudo docker run --rm --network host --env-file .env -v $PWD/scripts:/scripts --e
 
 Исходник определения — `src/rutracker_proxy/definitions/rutracker-proxy.yml`. Категории генерируются из `definitions/rutracker_forums.tsv`: после правок в `scripts/gen_categories.py` запустить `python scripts/gen_categories.py`.
 
-Список форумов берётся из публичного API дерева форумов rutracker. `python scripts/update_forums.py` обновляет TSV и категории и показывает, что изменилось; workflow [Update RuTracker forum list](.github/workflows/update-forums.yml) запускает его по понедельникам (или вручную) и открывает pull request, если есть изменения. Категории новых форумов стоит проверить по описанию PR. Чтобы workflow мог открывать PR, включите Settings → Actions → General → «Allow GitHub Actions to create and approve pull requests».
+Список форумов берётся из публичного API дерева форумов rutracker. `python scripts/update_forums.py` обновляет TSV и категории и показывает, что изменилось; workflow [Update RuTracker forum list](.github/workflows/update-forums.yml) запускает его по понедельникам (или вручную) и открывает pull request, если есть изменения; PR заодно поднимает patch-версию, поэтому его мерж выпускает релиз. Категории новых форумов стоит проверить по описанию PR. Чтобы workflow мог открывать PR, включите Settings → Actions → General → «Allow GitHub Actions to create and approve pull requests».
 
 | Переменная `install-definition` | По умолчанию | Смысл |
 |---|---|---|
@@ -119,6 +119,13 @@ GitHub Actions ([.github/workflows/docker.yml](.github/workflows/docker.yml)): �
 Публикация в Docker Hub и GHCR — при push в `main` (тег `latest`) и при тегах `vX.Y.Z` (теги `X.Y.Z` и `X.Y`); у каждой сборки есть тег `sha-<commit>`.
 
 Нужные секреты репозитория: `DOCKERHUB_USERNAME` и `DOCKERHUB_TOKEN` (Docker Hub → Account settings → Personal access tokens, права Read & Write). Для GHCR используется встроенный `GITHUB_TOKEN`.
+
+## Релизы
+
+Релиз — это поднятие версии, попавшее в `main`. Workflow [Release](.github/workflows/release.yml) видит в `pyproject.toml` версию, для которой ещё нет тега, создаёт тег `vX.Y.Z` и GitHub Release с автоматическими заметками и публикует образы `X.Y.Z` / `X.Y`.
+
+- PR с обновлением списка форумов сам поднимает patch-версию, поэтому его мерж выпускает релиз.
+- Любой другой релиз: `python scripts/bump_version.py [patch|minor|major]`, коммит, мерж в `main`.
 
 ## Разработка
 
