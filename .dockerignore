@@ -8,5 +8,4 @@ definitions
 deploy
 **/__pycache__
 *.md
-truenas-catalog
 assets
